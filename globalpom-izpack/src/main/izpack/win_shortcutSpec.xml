@@ -1,0 +1,73 @@
+<shortcuts>
+    <skipIfNotSupported />
+    <programGroup defaultName="${project.name} ${project.version}"
+        location="startMenu" />
+    <shortcut
+       name="Start ${project.name}"
+     programGroup="yes"
+     desktop="yes"
+     applications="no"
+     startMenu="yes"
+     startup="no"
+     target="$JAVA_HOME\bin\javaw"
+     commandLine="-Dlog4j.configuration=file:///$INSTALL_PATH/etc/log4j.properties -cp &quot;$INSTALL_PATH/lib/*&quot;; ${project.custom.mainclass}"
+     workingDirectory="$INSTALL_PATH"
+     description="Start ${project.name}. ${project.description}"
+     type="Application"
+     encoding="UTF-8"
+     terminal="false"
+     KdeSubstUID="false"
+     initialState="normal"
+     iconFile="$INSTALL_PATH\etc\${project.custom.icon.windows}">
+        <createForPack name="Windows run files" />
+    </shortcut>
+    <shortcut
+       name="Debug ${project.name}"
+     programGroup="yes"
+     desktop="yes"
+     applications="no"
+     startMenu="yes"
+     startup="no"
+     target="$JAVA_HOME\bin\javaw"
+     commandLine="-Dlog4j.configuration=file:///$INSTALL_PATH/etc/debug-log4j.properties -cp &quot;$INSTALL_PATH/lib/*&quot;; ${project.custom.mainclass}"
+     workingDirectory="$INSTALL_PATH"
+     description="Start debug mode of ${project.name}. ${project.description}"
+     type="Application"
+     encoding="UTF-8"
+     terminal="true"
+     KdeSubstUID="false"
+     initialState="normal"
+     iconFile="$INSTALL_PATH\etc\\${project.custom.icon.windows}">
+        <createForPack name="Windows run files" />
+    </shortcut>
+    <shortcut
+       name="Readme file"
+     programGroup="yes"
+     desktop="no"
+     applications="no"
+     startMenu="yes"
+     startup="no"
+     target="$INSTALL_PATH\doc\en\readme.txt"
+     commandLine=""
+     workingDirectory="$INSTALL_PATH\doc\en"
+     description="${project.name} readme file"
+     type="Link"
+     encoding="UTF-8">
+        <createForPack name="Doc-English" />
+    </shortcut>
+    <shortcut
+       name="Liemich Datei"
+     programGroup="yes"
+     desktop="no"
+     applications="no"
+     startMenu="yes"
+     startup="no"
+     target="$INSTALL_PATH\doc\de\readme.txt"
+     commandLine=""
+     workingDirectory="$INSTALL_PATH\doc\de"
+     description="${project.name} liesmich Datei"
+     type="Link"
+     encoding="UTF-8">
+        <createForPack name="Doc-Deutsch" />
+    </shortcut>
+</shortcuts>
