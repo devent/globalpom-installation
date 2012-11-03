@@ -1,0 +1,8 @@
+.project
+.settings/
+target/
+*~
+.directory
+*.orig
+.classpath
+.groovy/
