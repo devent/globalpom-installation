@@ -22,6 +22,9 @@
 		<project.custom.mainclass />
 		<project.custom.organization.url>http://www.anr-institute.com</project.custom.organization.url>
         <project.custom.name>${project.name}</project.custom.name>
+        <project.custom.gui.resizeable>yes</project.custom.gui.resizeable>
+        <project.custom.gui.width>536</project.custom.gui.width>
+        <project.custom.gui.height>428</project.custom.gui.height>
 		<project.custom.author.name />
 		<project.custom.author.email />
 		<project.custom.readme>doc/en/readme.txt</project.custom.readme>
