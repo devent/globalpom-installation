@@ -41,7 +41,7 @@
 	</locale>
 
 	<resources>
-		<res id="InfoPanel.info" src="doc/readme-en.txt" />
+		<res id="InfoPanel.info" src="${project.custom.readme}" />
         <res id="shortcutSpec.xml" src="win_shortcutSpec.xml" />
         <res id="Unix_shortcutSpec.xml" src="unix_shortcutSpec.xml" />
 	</resources>

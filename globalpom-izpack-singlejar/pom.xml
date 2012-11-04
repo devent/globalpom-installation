@@ -24,6 +24,7 @@
         <project.custom.name>${project.name}</project.custom.name>
 		<project.custom.author.name />
 		<project.custom.author.email />
+		<project.custom.readme>doc/en/readme.txt</project.custom.readme>
 		<project.custom.icon.unix>etc/application.png</project.custom.icon.unix>
 		<project.custom.icon.windows>etc/application.ico</project.custom.icon.windows>
 	</properties>
