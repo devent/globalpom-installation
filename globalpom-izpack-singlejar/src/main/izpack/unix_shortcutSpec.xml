@@ -38,7 +38,7 @@
      terminal="false"
      KdeSubstUID="false"
      initialState="normal"
-     iconFile="$INSTALL_PATH\${project.custom.icon.unix}">
+     iconFile="$INSTALL_PATH/${project.custom.icon.unix}">
         <createForPack name="Linux run files" />
     </shortcut>
     <shortcut
@@ -57,7 +57,7 @@
      terminal="true"
      KdeSubstUID="false"
      initialState="normal"
-     iconFile="$INSTALL_PATH\${project.custom.icon.unix}">
+     iconFile="$INSTALL_PATH/${project.custom.icon.unix}">
         <createForPack name="Linux run files" />
     </shortcut>
     <shortcut
@@ -71,7 +71,7 @@
      commandLine=""
      workingDirectory="$INSTALL_PATH/doc/en"
      description="${project.name} readme file"
-     type="Link"
+     type="Application"
      encoding="UTF-8">
         <createForPack name="Doc-English" />
     </shortcut>
@@ -86,7 +86,7 @@
      commandLine=""
      workingDirectory="$INSTALL_PATH/doc/de"
      description="${project.name} liesmich Datei"
-     type="Link"
+     type="Application"
      encoding="UTF-8">
         <createForPack name="Doc-Deutsch" />
     </shortcut>
