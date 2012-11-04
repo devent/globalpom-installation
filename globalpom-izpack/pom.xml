@@ -11,7 +11,7 @@
 
 	<artifactId>globalpom-izpack</artifactId>
 	<packaging>pom</packaging>
-	<name>IzPack</name>
+	<name>IzPack Installation</name>
     <version>2.0-SNAPSHOT</version>
 	<description>IzPack installer support. Defines a new property compile-izpack that will bundle and create an IzPack installer Jar file.</description>
 
