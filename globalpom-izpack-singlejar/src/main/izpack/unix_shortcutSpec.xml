@@ -67,11 +67,12 @@
      applications="no"
      startMenu="yes"
      startup="no"
-     target="$INSTALL_PATH/doc/en/readme.txt"
+     url="$INSTALL_PATH/doc/en/readme.txt"
      commandLine=""
      workingDirectory="$INSTALL_PATH/doc/en"
      description="${project.name} readme file"
-     type="Application"
+     type="link"
+     mimetype="text/plain"
      encoding="UTF-8">
         <createForPack name="Doc-English" />
     </shortcut>
@@ -82,11 +83,12 @@
      applications="no"
      startMenu="yes"
      startup="no"
-     target="$INSTALL_PATH/doc/de/readme.txt"
+     url="$INSTALL_PATH/doc/de/readme.txt"
      commandLine=""
      workingDirectory="$INSTALL_PATH/doc/de"
      description="${project.name} liesmich Datei"
-     type="Application"
+     type="link"
+     mimetype="text/plain"
      encoding="UTF-8">
         <createForPack name="Doc-Deutsch" />
     </shortcut>
