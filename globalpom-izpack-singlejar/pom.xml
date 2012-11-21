@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.24</version>
+		<version>1.25-SNAPSHOT</version>
 		<relativePath />
 	</parent>
 
@@ -18,7 +18,6 @@
 
 	<properties>
 		<project.custom.staging.dir>${project.build.directory}/staging</project.custom.staging.dir>
-		<project.custom.izpack.standalone.compiler.version>4.3.5</project.custom.izpack.standalone.compiler.version>
 		<project.custom.izpack.mainclass>com.izforge.izpack.installer.Installer</project.custom.izpack.mainclass>
 		<project.custom.mainclass />
 		<project.custom.organization.url>http://www.anr-institute.com</project.custom.organization.url>
@@ -136,26 +135,6 @@
 			</plugin>
 
 		</plugins>
-
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.izpack</groupId>
-					<artifactId>izpack-maven-plugin</artifactId>
-					<version>1.0-alpha-5</version>
-				</plugin>
-				<plugin>
-					<groupId>com.akathist.maven.plugins.launch4j</groupId>
-					<artifactId>launch4j-maven-plugin</artifactId>
-					<version>1.5.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>1.1.1</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 
 	</build>
 
