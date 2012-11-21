@@ -12,7 +12,7 @@
 
 	<artifactId>globalpom-izpack-singlejar</artifactId>
 	<packaging>pom</packaging>
-	<name>IzPack Single Jar</name>
+	<name>Installation :: IzPack :: Single Jar</name>
 	<version>2.1-SNAPSHOT</version>
 	<description>IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.</description>
 
@@ -113,7 +113,15 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>com.anrisoftware.globalpom</groupId>
+						<artifactId>globalpom-izpack-singlejar-assembly</artifactId>
+						<version>0.0.1-SNAPSHOT</version>
+					</dependency>
+				</dependencies>
 				<configuration>
 					<archive>
 						<manifest>
