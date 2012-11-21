@@ -17,7 +17,7 @@
 @REM along with globalpom-izpack-singlejar. If not, see <http://www.gnu.org/licenses/>.
 @REM
 
-set mainjar="%CD%"\lib\\${project.artifactId}-${project.version}-jar-with-dependencies.jar
+set mainjar="%CD%"\lib\\${project.custom.jarfile}
 set log="-Dlog4j.configuration=file:///%CD%/etc/debug-log4j.properties"
 
 java %log% -jar %mainjar%
