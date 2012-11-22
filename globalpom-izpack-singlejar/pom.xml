@@ -292,6 +292,92 @@
 				</plugins>
 			</build>
 		</profile>
+
+
+        <profile>
+            <id>make-exe</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                        <artifactId>launch4j-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>l4j</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>launch4j</goal>
+                                </goals>
+                                <configuration>
+                                    <headerType>${project.custom.type}</headerType>
+                                    <outfile>target/${project.custom.name}-${project.custom.version}-single-jar.exe</outfile>
+                                    <jar>target/${project.artifactId}-${project.version}-single-jar.jar</jar>
+                                    <errTitle>${project.artifactId}-${project.version}</errTitle>
+                                    <classPath>
+                                        <mainClass>${project.custom.mainclass}</mainClass>
+                                        <addDependencies>false</addDependencies>
+                                        <preCp>anything</preCp>
+                                    </classPath>
+                                    <jre>
+                                        <minVersion>${project.custom.jre.minversion}</minVersion>
+                                    </jre>
+                                    <versionInfo>
+                                        <fileVersion>${project.custom.file.version}</fileVersion>
+                                        <txtFileVersion>${project.custom.version}</txtFileVersion>
+                                        <fileDescription>${project.custom.description}</fileDescription>
+                                        <copyright>${project.custom.copyright}</copyright>
+                                        <productVersion>${project.custom.file.version}</productVersion>
+                                        <txtProductVersion>${project.custom.version}</txtProductVersion>
+                                        <productName>${project.custom.name}</productName>
+                                        <internalName>${project.custom.name}-single-jar</internalName>
+                                        <originalFilename>${project.artifactId}-${project.version}-single-jar.exe</originalFilename>
+                                    </versionInfo>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-property</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireProperty>
+                                            <property>project.custom.mainclass</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.mainclass must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.author.name</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.author.name must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.author.email</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.author.email must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.type</property>
+                                            <regex>gui|console</regex>
+                                            <regexMessage>Property project.custom.type must be set. Property must be either "gui" or "cli".</regexMessage>
+                                        </requireProperty>
+                                    </rules>
+                                    <fail>true</fail>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
 	</profiles>
 
 </project>
