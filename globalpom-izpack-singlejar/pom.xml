@@ -231,7 +231,7 @@
 								</goals>
 								<configuration>
 									<headerType>gui</headerType>
-									<outfile>target/${project.custom.name}-${project.custom.version}-standard.exe</outfile>
+									<outfile>target/${project.artifactId}-${project.version}-standard.exe</outfile>
 									<jar>target/${project.artifactId}-${project.version}-standard.jar</jar>
 									<errTitle>${project.artifactId}-${project.version}</errTitle>
 									<classPath>
@@ -317,7 +317,7 @@
                                 </goals>
                                 <configuration>
                                     <headerType>${project.custom.type}</headerType>
-                                    <outfile>target/${project.custom.name}-${project.custom.version}-single-jar.exe</outfile>
+                                    <outfile>target/${project.artifactId}-${project.version}-single-jar.exe</outfile>
                                     <jar>target/${project.artifactId}-${project.version}-single-jar.jar</jar>
                                     <errTitle>${project.artifactId}-${project.version}</errTitle>
                                     <classPath>
