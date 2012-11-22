@@ -203,11 +203,6 @@
 											<regex>.+</regex>
 											<regexMessage>Property project.custom.author.email must be set. The property cannot be empty.</regexMessage>
 										</requireProperty>
-										<requireProperty>
-											<property>project.custom.type</property>
-											<regex>gui|cli</regex>
-											<regexMessage>Property project.custom.type must be set. Property must be either "gui" or "cli".</regexMessage>
-										</requireProperty>
 									</rules>
 									<fail>true</fail>
 								</configuration>
@@ -289,7 +284,7 @@
                                         </requireProperty>
                                         <requireProperty>
                                             <property>project.custom.type</property>
-                                            <regex>gui|cli</regex>
+                                            <regex>gui|console</regex>
                                             <regexMessage>Property project.custom.type must be set. Property must be either "gui" or "cli".</regexMessage>
                                         </requireProperty>
                                     </rules>
