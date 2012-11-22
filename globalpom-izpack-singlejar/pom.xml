@@ -26,6 +26,7 @@
 		<project.custom.type>gui</project.custom.type>
 		<project.custom.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.copyright>
 		<project.custom.file.version>1.0.0.0</project.custom.file.version>
+		<project.custom.original.filename>${project.artifactId}-${project.version}.jar</project.custom.original.filename>
 		<project.custom.gui.resizeable>yes</project.custom.gui.resizeable>
 		<project.custom.gui.width>536</project.custom.gui.width>
 		<project.custom.gui.height>428</project.custom.gui.height>
@@ -330,7 +331,7 @@
                                         <txtProductVersion>${project.custom.version}</txtProductVersion>
                                         <productName>${project.custom.name}</productName>
                                         <internalName>${project.custom.name}-single-jar</internalName>
-                                        <originalFilename>${project.artifactId}-${project.version}-single-jar.exe</originalFilename>
+                                        <originalFilename>${project.custom.original.filename}</originalFilename>
                                     </versionInfo>
                                 </configuration>
                             </execution>
@@ -367,6 +368,11 @@
                                             <property>project.custom.type</property>
                                             <regex>gui|console</regex>
                                             <regexMessage>Property project.custom.type must be set. Property must be either "gui" or "cli".</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.original.filename</property>
+                                            <regex>.{1,50}</regex>
+                                            <regexMessage>Property project.custom.original.filename must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                     </rules>
                                     <fail>true</fail>
