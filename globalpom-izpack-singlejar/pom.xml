@@ -22,9 +22,10 @@
 		<project.custom.mainclass />
 		<project.custom.organization.url>http://www.anr-institute.com</project.custom.organization.url>
 		<project.custom.name>${project.name}</project.custom.name>
+		<project.custom.version>${project.version}</project.custom.version>
 		<project.custom.type>gui</project.custom.type>
 		<project.custom.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.copyright>
-		<project.file.version>${project.version}</project.file.version>
+		<project.custom.file.version>${project.version}</project.custom.file.version>
 		<project.custom.gui.resizeable>yes</project.custom.gui.resizeable>
 		<project.custom.gui.width>536</project.custom.gui.width>
 		<project.custom.gui.height>428</project.custom.gui.height>
@@ -233,7 +234,7 @@
 								</goals>
 								<configuration>
 									<headerType>${project.custom.type}</headerType>
-									<outfile>target/${project.artifactId}-${project.version}-standard.exe</outfile>
+									<outfile>target/${project.custom.name}-${project.custom.version}-standard.exe</outfile>
 									<jar>target/${project.artifactId}-${project.version}-standard.jar</jar>
 									<errTitle>${project.artifactId}-${project.version}</errTitle>
 									<classPath>
@@ -245,12 +246,12 @@
 										<minVersion>${project.custom.jre.minversion}</minVersion>
 									</jre>
 									<versionInfo>
-										<fileVersion>${project.file.version}</fileVersion>
-										<txtFileVersion>${project.version}</txtFileVersion>
-										<fileDescription>${project.description}</fileDescription>
+										<fileVersion>${project.custom.file.version}</fileVersion>
+										<txtFileVersion>${project.custom.version}</txtFileVersion>
+										<fileDescription>${project.custom.description}</fileDescription>
 										<copyright>${project.custom.copyright}</copyright>
-										<productVersion>${project.file.version}</productVersion>
-										<txtProductVersion>${project.version}</txtProductVersion>
+										<productVersion>${project.custom.file.version}</productVersion>
+										<txtProductVersion>${project.custom.version}</txtProductVersion>
 										<productName>${project.custom.name}</productName>
 										<internalName>${project.custom.name}-standard</internalName>
 										<originalFilename>${project.artifactId}-${project.version}-standard.exe</originalFilename>

@@ -23,10 +23,10 @@
 <installation version="1.0">
 
 	<info>
-		<appname>${project.custom.name}</appname>
-		<appversion>${project.version}</appversion>
-		<appsubpath>${project.artifactId}-${project.version}</appsubpath>
-		<url>${project.custom.organization.url}</url>
+        <appname>${project.custom.name}</appname>
+        <appversion>${project.custom.version}</appversion>
+        <appsubpath>${project.custom.name}-${project.custom.version}</appsubpath>
+        <url>${project.custom.organization.url}</url>
 		<authors>
 			<author name="${project.custom.author.name}" email="${project.custom.author.email}" />
 		</authors>

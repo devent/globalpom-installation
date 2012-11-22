@@ -20,7 +20,7 @@
 -->
 <shortcuts>
     <skipIfNotSupported />
-    <programGroup defaultName="${project.name} ${project.version}"
+    <programGroup defaultName="${project.custom.name} ${project.custom.version}"
         location="startMenu" />
     <shortcut
        name="Start ${project.name}"
@@ -29,10 +29,10 @@
      applications="no"
      startMenu="yes"
      startup="no"
-     target="$JAVA_HOME\bin\javaw"
+     target="$JAVA_HOME\bin\java"
      commandLine="-Dlog4j.configuration=file:///&quot;$INSTALL_PATH&quot;/etc/log4j.properties -jar &quot;$INSTALL_PATH&quot;/lib/${project.artifactId}-${project.version}-jar-with-dependencies.jar"
      workingDirectory="$INSTALL_PATH"
-     description="Start ${project.name}. ${project.description}"
+     description="Start ${project.custom.name}. ${project.custom.description}"
      type="Application"
      encoding="UTF-8"
      terminal="false"
@@ -42,7 +42,7 @@
         <createForPack name="Windows run files" />
     </shortcut>
     <shortcut
-       name="Debug ${project.name}"
+       name="Debug ${project.custom.name}"
      programGroup="yes"
      desktop="yes"
      applications="no"
@@ -51,7 +51,7 @@
      target="$JAVA_HOME\bin\java"
      commandLine="-Dlog4j.configuration=file:///&quot;$INSTALL_PATH&quot;/etc/debug-log4j.properties -jar &quot;$INSTALL_PATH&quot;/lib/${project.artifactId}-${project.version}-jar-with-dependencies.jar"
      workingDirectory="$INSTALL_PATH"
-     description="Start debug mode of ${project.name}. ${project.description}"
+     description="Start debug mode of ${project.custom.name}. ${project.custom.description}"
      type="Application"
      encoding="UTF-8"
      terminal="true"
@@ -70,8 +70,24 @@
      target="&quot;$INSTALL_PATH&quot;\doc\en\readme.txt"
      commandLine=""
      workingDirectory="$INSTALL_PATH\doc\en"
-     description="${project.name} readme file"
+     description="${project.custom.name} readme file"
      type="Link"
+     encoding="UTF-8">
+        <createForPack name="Doc-English" />
+    </shortcut>
+    <shortcut
+       name="Documentation ${project.version}"
+     programGroup="yes"
+     desktop="no"
+     applications="no"
+     startMenu="yes"
+     startup="no"
+     target="&quot;$INSTALL_PATH&quot;/doc/en/documentation-${project.custom.version}.pdf"
+     commandLine=""
+     workingDirectory="$INSTALL_PATH/doc/en"
+     description="${project.custom.name} documentation for version ${project.custom.version}."
+     type="link"
+     mimetype="application/pdf"
      encoding="UTF-8">
         <createForPack name="Doc-English" />
     </shortcut>
@@ -85,7 +101,7 @@
      target="&quot;$INSTALL_PATH&quot;\doc\de\readme.txt"
      commandLine=""
      workingDirectory="$INSTALL_PATH\doc\de"
-     description="${project.name} liesmich Datei"
+     description="${project.custom.name} liesmich Datei"
      type="Link"
      encoding="UTF-8">
         <createForPack name="Doc-Deutsch" />
