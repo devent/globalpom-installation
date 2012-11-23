@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.anrisoftware.globalpom</groupId>
 		<artifactId>globalpom-parent</artifactId>
-		<version>1.25-SNAPSHOT</version>
+		<version>1.25</version>
 		<relativePath />
 	</parent>
 
@@ -15,5 +15,9 @@
 	<name>Installation :: IzPack :: Single Jar Assembly</name>
 	<description>Custom assembly to create a Jar with all dependencies and services properties merged.</description>
 	<inceptionYear>2012</inceptionYear>
+
+    <properties>
+        <project.custom.year>${project.inceptionYear}</project.custom.year>
+    </properties>
 
 </project>
