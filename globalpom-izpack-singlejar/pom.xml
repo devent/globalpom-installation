@@ -116,37 +116,6 @@
 				</executions>
 			</plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<dependencies>
-					<dependency>
-						<groupId>com.anrisoftware.globalpom</groupId>
-						<artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-						<version>1.0</version>
-					</dependency>
-				</dependencies>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>${project.custom.mainclass}</mainClass>
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>single-jar</descriptorRef>
-					</descriptorRefs>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-my-jar-with-dependencies</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 
 	</build>
@@ -156,6 +125,37 @@
 			<id>compile-izpack</id>
 			<build>
 				<plugins>
+		            <plugin>
+		                <groupId>org.apache.maven.plugins</groupId>
+		                <artifactId>maven-assembly-plugin</artifactId>
+		                <dependencies>
+		                    <dependency>
+		                        <groupId>com.anrisoftware.globalpom</groupId>
+		                        <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
+		                        <version>1.0</version>
+		                    </dependency>
+		                </dependencies>
+		                <configuration>
+		                    <archive>
+		                        <manifest>
+		                            <mainClass>${project.custom.mainclass}</mainClass>
+		                        </manifest>
+		                    </archive>
+		                    <descriptorRefs>
+		                        <descriptorRef>single-jar</descriptorRef>
+		                    </descriptorRefs>
+		                </configuration>
+		                <executions>
+		                    <execution>
+		                        <id>make-my-jar-with-dependencies</id>
+		                        <phase>package</phase>
+		                        <goals>
+		                            <goal>single</goal>
+		                        </goals>
+		                    </execution>
+		                </executions>
+		            </plugin>
+
 					<plugin>
 						<groupId>org.codehaus.izpack</groupId>
 						<artifactId>izpack-maven-plugin</artifactId>
@@ -290,6 +290,12 @@
                                             <regex>.{1,50}\.exe$</regex>
                                             <regexMessage>Property project.custom.install.original.filename must be set. It cannot exceed 50 characters. It must end with ".exe".</regexMessage>
                                         </requireProperty>
+                                        <requireFilesExist>
+                                            <files>
+                                                <file>target/${project.artifactId}-${project.version}-standard.jar</file>
+                                            </files>
+                                            <message>File target/${project.artifactId}-${project.version}-standard.jar must exists. Run profile compile-izpack first.</message>
+                                        </requireFilesExist>
                                     </rules>
 									<fail>true</fail>
 								</configuration>
@@ -381,6 +387,12 @@
                                             <regex>.{1,50}\.exe$</regex>
                                             <regexMessage>Property project.custom.original.filename must be set. It cannot exceed 50 characters. It must end with ".exe".</regexMessage>
                                         </requireProperty>
+                                        <requireFilesExist>
+                                            <files>
+                                                <file>target/${project.artifactId}-${project.version}-single-jar.jar</file>
+                                            </files>
+                                            <message>File target/${project.artifactId}-${project.version}-single-jar.jar must exists. Run profile compile-izpack first.</message>
+                                        </requireFilesExist>
                                     </rules>
                                     <fail>true</fail>
                                 </configuration>
