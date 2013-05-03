@@ -25,15 +25,15 @@
 		<project.custom.name>${project.name}</project.custom.name>
 		<project.custom.version>${project.version}</project.custom.version>
 		<project.custom.type>gui</project.custom.type>
-		<project.custom.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.copyright>
+		<project.custom.author.name />
+		<project.custom.author.email />
+		<project.custom.copyright>${project.custom.year} ${project.custom.author.name}</project.custom.copyright>
 		<project.custom.file.version>1.0.0.0</project.custom.file.version>
 		<project.custom.original.filename>${project.artifactId}-${project.version}.exe</project.custom.original.filename>
         <project.custom.original.install.filename>${project.artifactId}-${project.version}-standard.exe</project.custom.original.install.filename>
 		<project.custom.gui.resizeable>yes</project.custom.gui.resizeable>
 		<project.custom.gui.width>536</project.custom.gui.width>
 		<project.custom.gui.height>428</project.custom.gui.height>
-		<project.custom.author.name />
-		<project.custom.author.email />
 		<project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
 		<project.custom.readme>doc/en/readme.txt</project.custom.readme>
 		<project.custom.icon.unix>etc/application.png</project.custom.icon.unix>
