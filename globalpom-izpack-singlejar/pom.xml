@@ -16,6 +16,7 @@
 	<version>2.3-SNAPSHOT</version>
 	<description>IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.</description>
 	<inceptionYear>2011</inceptionYear>
+    <url>https://www.anr-institute.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
 
 	<properties>
 		<project.custom.staging.dir>${project.build.directory}/staging</project.custom.staging.dir>
@@ -58,6 +59,39 @@
 			<artifactId>izpack-standalone-compiler</artifactId>
 		</dependency>
 	</dependencies>
+
+	<issueManagement>
+		<system>Redmine</system>
+		<url>https://www.anr-institute.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
+	</issueManagement>
+
+	<licenses>
+		<license>
+			<name>LGPLv3</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>EM</id>
+			<name>Erwin Müller</name>
+			<email>erwin.mueller@deventm.org</email>
+			<organization>Advanced Natural Research Insitute GmbH</organization>
+			<roles>
+				<role>Owner</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>Europe/Berlin</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+        <connection>scm:git:${custom.gitpublic.url}globalpom-installation.git</connection>
+        <developerConnection>scm:git:${custom.gitpublic.url}globalpom-installation.git</developerConnection>
+        <url>https://www.anr-institute.com/gitpublic/globalpom-installation.git/</url>
+	</scm>
 
 	<build>
 
@@ -119,7 +153,7 @@
 		                    <dependency>
 		                        <groupId>com.anrisoftware.globalpom</groupId>
 		                        <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-		                        <version>1.1</version>
+		                        <version>1.2</version>
 		                    </dependency>
 		                </dependencies>
 		                <configuration>

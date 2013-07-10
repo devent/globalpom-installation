@@ -18,6 +18,6 @@
 @REM
 
 set mainjar="%CD%"\lib\\${project.custom.jarfile}
-set log="-Dlog4j.configuration=file:///%CD%/etc/log4j.properties"
+set log="-Dlogback.configurationFile=file:///%CD%/etc/logback.xml"
 
 java %log% -jar %mainjar%

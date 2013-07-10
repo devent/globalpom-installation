@@ -24,6 +24,6 @@ cd "`dirname "${symlink:-$0}"`"
 
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 mainjar="../../lib/${project.custom.jarfile}"
-log="-Dlog4j.configuration=file:///$PWD/../../etc/log4j.properties"
+log="-Dlogback.configurationFile=file:///$PWD/../../etc/logback.xml"
 
 java "$log" -jar "$mainjar" $*
