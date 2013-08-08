@@ -32,8 +32,6 @@
 		<project.custom.gui.resizeable>yes</project.custom.gui.resizeable>
 		<project.custom.gui.width>536</project.custom.gui.width>
 		<project.custom.gui.height>428</project.custom.gui.height>
-		<project.custom.author.name />
-		<project.custom.author.email />
 		<project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
 		<project.custom.readme>doc/en/readme.txt</project.custom.readme>
 		<project.custom.icon.unix>etc/application.png</project.custom.icon.unix>
