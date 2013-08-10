@@ -17,7 +17,8 @@
 @REM along with globalpom-izpack. If not, see <http://www.gnu.org/licenses/>.
 @REM
 
-set mainjar="%CD%"\lib\\${project.custom.jarfile}
+set lib="%CD%"\lib\*
 set log="-Dlogback.configurationFile=file:///%CD%/etc/logback.xml"
+set mainClass="${project.custom.mainclass}"
 
-java %log% -jar %mainjar%
+java %log% -cp %lib% %mainClass% %*
