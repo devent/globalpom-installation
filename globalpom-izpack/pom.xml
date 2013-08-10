@@ -36,7 +36,6 @@
 		<project.custom.readme>doc/en/readme.txt</project.custom.readme>
 		<project.custom.icon.unix>etc/application.png</project.custom.icon.unix>
 		<project.custom.icon.windows>etc/application.ico</project.custom.icon.windows>
-		<project.custom.jarfile>${project.artifactId}-${project.version}-single-jar.jar</project.custom.jarfile>
 	</properties>
 
     <licenses>
@@ -84,6 +83,18 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!-- log dependencies -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- izpack dependencies -->
         <dependency>
             <groupId>org.codehaus.izpack</groupId>
             <artifactId>izpack-standalone-compiler</artifactId>
