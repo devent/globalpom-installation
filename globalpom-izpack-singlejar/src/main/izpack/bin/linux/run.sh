@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright 2011-2013 Erwin Müller <erwin.mueller@deventm.org>
+# Copyright 2011-2014 Erwin Müller <erwin.mueller@deventm.org>
 #
 # This file is part of globalpom-izpack-singlejar.
 #
