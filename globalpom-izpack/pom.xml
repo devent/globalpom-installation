@@ -6,17 +6,17 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-        <version>1.31</version>
+        <version>1.38</version>
         <relativePath />
 	</parent>
 
 	<artifactId>globalpom-izpack</artifactId>
 	<packaging>pom</packaging>
     <name>Installation :: IzPack</name>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>2.1-SNAPSHOT</version>
 	<description>IzPack installer support. Defines a new property compile-izpack that will bundle and create an IzPack installer Jar file.</description>
     <inceptionYear>2011</inceptionYear>
-	<url>https://www.anr-institute.com/projects/projects/globalpom-groovy-izpack</url>
+	<url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack</url>
 
 	<properties>
 		<project.custom.staging.dir>${project.build.directory}/staging</project.custom.staging.dir>
@@ -61,7 +61,7 @@
 
     <issueManagement>
         <system>Redmine</system>
-        <url>https://www.anr-institute.com/projects/projects/globalpom-groovy-izpack</url>
+        <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack</url>
     </issueManagement>
 
     <scm>
