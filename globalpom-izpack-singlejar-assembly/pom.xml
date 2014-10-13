@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-	<version>1.4-SNAPSHOT</version>
+	<version>1.4</version>
 	<name>Installation :: IzPack :: Single Jar Assembly</name>
 	<description>Custom assembly to create a Jar with all dependencies and services properties merged.</description>
 	<inceptionYear>2012</inceptionYear>
