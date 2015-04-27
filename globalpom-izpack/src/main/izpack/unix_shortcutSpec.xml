@@ -1,6 +1,6 @@
 <!--
 
-    Copyright 2011-2014 Erwin Müller <erwin.mueller@deventm.org>
+    Copyright 2011-2015 Erwin Müller <erwin.mueller@deventm.org>
 
     This file is part of globalpom-izpack.
 
@@ -23,44 +23,44 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://izpack.org/schema/shortcuts http://izpack.org/schema/5.0/izpack-shortcuts-5.0.xsd">
 <skipIfNotSupported />
-    <programGroup defaultName="${project.custom.name}"
+    <programGroup defaultName="${project.custom.app.name}"
         location="startMenu" />
     <shortcut
-       name="Start ${project.name}"
+       name="Start ${project.custom.app.name}"
      programGroup="yes"
      desktop="yes"
      applications="no"
      startMenu="yes"
      startup="no"
-     target="${INSTALL_PATH}/bin/linux/run.sh"
+     target="${INSTALL_PATH}/bin/linux/${project.custom.app.linuxbin}"
      commandLine=""
      workingDirectory="$INSTALL_PATH/bin/linux"
-     description="Start ${project.custom.name}. ${project.custom.description}"
+     description="Start ${project.custom.app.name}. ${project.custom.app.description}"
      type="Application"
      encoding="UTF-8"
      terminal="true"
      KdeSubstUID="false"
      initialState="normal"
-     iconFile="$INSTALL_PATH/${project.custom.icon.unix}">
+     iconFile="$INSTALL_PATH/${project.custom.app.icon.unix}">
         <createForPack name="Linux" />
     </shortcut>
     <shortcut
-       name="Debug Mode ${project.custom.name}"
+       name="Debug Mode ${project.custom.app.name}"
      programGroup="yes"
      desktop="yes"
      applications="no"
      startMenu="yes"
      startup="no"
-     target="$INSTALL_PATH/bin/linux/debug-run.sh"
+     target="$INSTALL_PATH/bin/linux/${project.custom.app.linuxdebugbin}"
      commandLine=""
      workingDirectory="$INSTALL_PATH/bin/linux"
-     description="Start debug mode of ${project.custom.name}. ${project.custom.description}"
+     description="Start debug mode of ${project.custom.app.name}. ${project.custom.app.description}"
      type="Application"
      encoding="UTF-8"
      terminal="true"
      KdeSubstUID="false"
      initialState="normal"
-     iconFile="$INSTALL_PATH/${project.custom.icon.unix}">
+     iconFile="$INSTALL_PATH/${project.custom.app.icon.unix}">
         <createForPack name="Linux" />
     </shortcut>
     <shortcut
@@ -74,7 +74,7 @@
      target="$INSTALL_PATH/doc/en/readme.txt"
      commandLine=""
      workingDirectory="$INSTALL_PATH/doc/en"
-     description="${project.custom.name} readme file"
+     description="${project.custom.app.name} readme file"
      type="link"
      mimetype="text/plain"
      encoding="UTF-8">
@@ -90,7 +90,7 @@
      target="$INSTALL_PATH/doc/de/readme.txt"
      commandLine=""
      workingDirectory="$INSTALL_PATH/doc/de"
-     description="${project.custom.name} liesmich Datei"
+     description="${project.custom.app.name} liesmich Datei"
      type="link"
      mimetype="text/plain"
      encoding="UTF-8">

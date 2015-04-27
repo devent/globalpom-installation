@@ -6,14 +6,14 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-        <version>1.38</version>
+        <version>1.39</version>
         <relativePath />
 	</parent>
 
 	<artifactId>globalpom-izpack</artifactId>
 	<packaging>pom</packaging>
     <name>Installation :: IzPack</name>
-	<version>2.2-rc4</version>
+	<version>2.3-rc4-SNAPSHOT</version>
 	<description>IzPack installer support. Defines a new property compile-izpack that will bundle and create an IzPack installer Jar file.</description>
     <inceptionYear>2011</inceptionYear>
 	<url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack</url>
@@ -27,9 +27,13 @@
         <project.custom.app.author.email />
         <project.custom.app.mainclass />
         <project.custom.app.organization.url>http://www.anr-institute.com</project.custom.app.organization.url>
-		<project.custom.app.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.app.copyright>
+		<project.custom.app.copyright>${project.custom.year} ${project.custom.author.name}</project.custom.app.copyright>
         <project.custom.app.icon.unix>etc/application.png</project.custom.app.icon.unix>
         <project.custom.app.icon.windows>etc/application.ico</project.custom.app.icon.windows>
+        <project.custom.app.linuxbin>run.sh</project.custom.app.linuxbin>
+        <project.custom.app.linuxdebugbin>debug-run.sh</project.custom.app.linuxdebugbin>
+        <project.custom.app.windowsbin>run.bat</project.custom.app.windowsbin>
+        <project.custom.app.windowsdebugbin>debug-run.bat</project.custom.app.windowsdebugbin>
         <project.custom.izpack.version>5.0.0-rc4</project.custom.izpack.version>
         <project.custom.izpack.staging.dir>${project.build.directory}/staging</project.custom.izpack.staging.dir>
         <project.custom.izpack.resources.dir>src/main/izpack</project.custom.izpack.resources.dir>
@@ -53,14 +57,20 @@
             <id>EM</id>
             <name>Erwin Müller</name>
             <email>erwin.mueller@deventm.org</email>
-            <organization>Advanced Natural Research Insitute GmbH</organization>
+            <timezone>Europe/Berlin</timezone>
+            <organization>Advanced Natural Research Institute</organization>
+            <organizationUrl>https://anrisoftware.com</organizationUrl>
             <roles>
                 <role>Owner</role>
                 <role>Developer</role>
             </roles>
-            <timezone>Europe/Berlin</timezone>
         </developer>
     </developers>
+
+    <organization>
+        <name>Advanced Natural Research Institute</name>
+        <url>https://anrisoftware.com</url>
+    </organization>
 
     <issueManagement>
         <system>Redmine</system>
@@ -68,12 +78,16 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:${custom.gitpublic.url}globalpom-installation.git</connection>
-        <developerConnection>scm:git:${custom.gitpublic.url}globalpom-installation.git</developerConnection>
-        <url>scm:git:${custom.gitpublic.url}globalpom-installation.git</url>
+        <connection>scm:git:git@anrisoftware.com:globalpom-installation.git</connection>
+        <developerConnection>scm:git:git@anrisoftware.com:globalpom-installation.git</developerConnection>
+        <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack/repository</url>
     </scm>
 
     <distributionManagement>
+        <site>
+            <id>anrisoftware</id>
+            <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+        </site>
         <repository>
             <id>osssonatype</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
@@ -225,6 +239,26 @@
                                             <property>project.custom.app.name</property>
                                             <regex>.+</regex>
                                             <regexMessage>Property project.custom.app.name must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.linuxbin</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.app.linuxbin must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.linuxdebugbin</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.app.linuxdebugbin must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.windowsbin</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.app.windowsbin must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.windowsdebugbin</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.app.windowsdebugbin must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
                                             <property>project.custom.izpack.gui.resizeable</property>
