@@ -1,0 +1,136 @@
+~~
+~~ Copyright 2011-2015 Erwin Müller <erwin.mueller@deventm.org>
+~~
+~~ This file is part of globalpom-izpack-singlejar.
+~~
+~~ globalpom-izpack-singlejar is free software: you can redistribute it and/or modify it
+~~ under the terms of the GNU Lesser General Public License as published by the
+~~ Free Software Foundation, either version 3 of the License, or (at your
+~~ option) any later version.
+~~
+~~ globalpom-izpack-singlejar is distributed in the hope that it will be useful, but
+~~ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+~~ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+~~ details.
+~~
+~~ You should have received a copy of the GNU Lesser General Public License
+~~ along with globalpom-izpack-singlejar. If not, see <http://www.gnu.org/licenses/>.
+~~
+
+Description
+
+  IzPack installer support. Defines a new property compile-izpack that will
+bundle and create an {{{http://izpack.org/}IzPack}} installer Jar file.
+The dependencies are bundled in a single executable Jar.
+The module is suppose to be used as the parent POM of the Maven project. It
+uses the IzPack library to package the dependencies and the program Jars
+in an installation package.
+
+Usage
+
+  [[1]] Create a new Maven module for the project called <<<project-install>>>;
+
+  [[2]] set the <<<globalpom-izpack-singlejar>>> module as the parent POM
+in the;
+
+  [[3]] copy the files from <<<src/izpack>>> from
+the <<<globalpom-izpack-singlejar>>> module to the
+created <<<project-install>>>;
+
+  [[4]] set or adjust the properties in <<<project-install>>> in
+the <<<pom.xml>>> file;
+
+  []
+
+* Properties
+
+  The following properties must be set or can be adjusted.
+
+*-----*------*
+ <<<project.custom.app.name>>> | The application name, defaults to <<<$\{project.name\}>>>
+*-----*------*
+ <<<project.custom.app.description>>> | The application description, defaults to <<<"">>>. Is used in the shortcuts specifications as the description of the application.
+*-----*------*
+ <<<project.custom.app.path>>> | The application installation path, defaults to <<<$\{project.name\}>>>.
+*-----*------*
+ <<<project.custom.app.version>>> | The application version string, defaults to <<<$\{project.version\}>>>.
+*-----*------*
+ <<<project.custom.app.author.name>>> | The application author name, must be set.
+*-----*------*
+ <<<project.custom.app.author.email>>> | The application author email address, must be set.
+*-----*------*
+ <<<project.custom.app.mainclass>>> | The application main class, must be set.
+*-----*------*
+ <<<project.custom.app.organization.url>>> | The application organization Internet address, defaults to <<<"http://www.anr-institute.com">>>. Should probably be changed.
+*-----*------*
+ <<<project.custom.app.copyright>>> | The application copyright disclaimer, defaults to <<<"$\{project.custom.year\} $\{project.custom.author.name\}">>>.
+*-----*------*
+ <<<project.custom.app.icon.unix>>> | The application icon for Unix systems, defaults to <<<"etc/application.png">>>.
+*-----*------*
+ <<<project.custom.app.icon.windows>>> | The application icon for Windows systems, defaults to <<<"etc/application.ico">>>.
+*-----*------*
+ <<<project.custom.app.linuxbin>>> | The application start script for Unix/Linux Systems, defaults to <<<"run.sh">>>.
+*-----*------*
+ <<<project.custom.app.linuxdebugbin>>> | The application debug start script for Unix/Linux Systems, defaults to <<<"debug-run.sh">>>.
+*-----*------*
+ <<<project.custom.app.windowsbin>>> | The application start script for Windows Systems, defaults to <<<"run.bat">>>.
+*-----*------*
+ <<<project.custom.app.windowsdebugbin>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
+*-----*------*
+ <<<project.custom.app.type>>> | The application type, can be a GUI or console application, defaults to <<<"gui">>>.
+*-----*------*
+ <<<project.custom.app.file.version>>> | The application file version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.app.original.filename>>> | The application original file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}.exe">>>.
+*-----*------*
+ <<<project.custom.izpack.version>>> | The IzPack version, defaults to <<<"5.0.0-rc4">>>.
+*-----*------*
+ <<<project.custom.izpack.staging.dir>>> | The IzPack staging directory path. That is the path to where all dependencies and resources are staged for packaging, defaults to <<<"$\{project.build.directory\}/staging">>>.
+*-----*------*
+ <<<project.custom.izpack.resources.dir>>> | The IzPack resources directory path. That is the path where the <<<install.xml>>> and other IzPack resources are found, defaults to <<<"src/main/izpack">>>.
+*-----*------*
+ <<<project.custom.izpack.gui.resizeable>>> | Sets the IzPack installation GUI resizeable, defaults to <<<"true">>>.
+*-----*------*
+ <<<project.custom.izpack.gui.width>>> | Sets the IzPack installation GUI initial width in pixels, defaults to <<<"536">>>.
+*-----*------*
+ <<<project.custom.izpack.gui.height>>> | Sets the IzPack installation GUI initial height in pixels, defaults to <<<"428">>>.
+*-----*------*
+ <<<project.custom.izpack.readme>>> | Sets the path for the readme file for the IzPack packager that is shown in the info-panel, defaults to <<<"doc/en/readme.txt">>>.
+*-----*------*
+ <<<project.custom.jre.minversion>>> | Sets the minimal JRE version string, defaults to <<<"$\{project.custom.source.source\}.0">>>.
+*-----*------*
+
+* Goals
+
+  To package the installer Jar for the <<<project-install>>>, Maven must be
+called with the <<<package>>> goal and with the <<<compile-izpack>>> profile
+active.
+
+---
+project-install/ $ mvn package -P compile-izpack
+---
+
+SCM
+
+* Main
+
+  * {{{https://anrisoftware.com/projects/projects/globalpom-groovy-izpack/repository}Repository}}
+
+  * git@anrisoftware.com:globalpom-installation.git
+
+* GitHub
+
+  * {{{https://github.com/devent/globalpom-installation}Repository}}
+
+  * git@github.com:devent/globalpom-installation.git
+
+Maven
+
+---
+<parent>
+    <groupId>com.anrisoftware.globalpom</groupId>
+    <artifactId>globalpom-izpack-singlejar</artifactId>
+    <version>2.7-rc4</version>
+    <relativePath />
+</parent>
+---

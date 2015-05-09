@@ -6,14 +6,14 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.38</version>
+		<version>1.39</version>
 		<relativePath />
 	</parent>
 
 	<artifactId>globalpom-izpack-singlejar</artifactId>
 	<packaging>pom</packaging>
 	<name>Installation :: IzPack :: Single Jar</name>
-	<version>2.6-rc4</version>
+	<version>2.7-rc4-SNAPSHOT</version>
 	<description>IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.</description>
 	<inceptionYear>2011</inceptionYear>
     <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
@@ -30,6 +30,10 @@
         <project.custom.app.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.app.copyright>
         <project.custom.app.icon.unix>etc/application.png</project.custom.app.icon.unix>
         <project.custom.app.icon.windows>etc/application.ico</project.custom.app.icon.windows>
+        <project.custom.app.linuxbin>run.sh</project.custom.app.linuxbin>
+        <project.custom.app.linuxdebugbin>debug-run.sh</project.custom.app.linuxdebugbin>
+        <project.custom.app.windowsbin>run.bat</project.custom.app.windowsbin>
+        <project.custom.app.windowsdebugbin>debug-run.bat</project.custom.app.windowsdebugbin>
         <project.custom.app.type>gui</project.custom.app.type>
         <project.custom.app.file.version>1.0.0.0</project.custom.app.file.version>
         <project.custom.app.original.filename>${project.artifactId}-${project.version}.exe</project.custom.app.original.filename>
@@ -43,12 +47,8 @@
         <project.custom.izpack.jarfile>${project.artifactId}-${project.version}-single-jar.jar</project.custom.izpack.jarfile>
 		<project.custom.izpack.mainclass>com.izforge.izpack.installer.Installer</project.custom.izpack.mainclass>
         <project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
+        <project.custom.singlejar_assembly.version>1.5-SNAPSHOT</project.custom.singlejar_assembly.version>
 	</properties>
-
-	<issueManagement>
-		<system>Redmine</system>
-		<url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
-	</issueManagement>
 
 	<licenses>
 		<license>
@@ -59,26 +59,36 @@
 	</licenses>
 
 	<developers>
-		<developer>
-			<id>EM</id>
-			<name>Erwin Müller</name>
-			<email>erwin.mueller@deventm.org</email>
-			<organization>Advanced Natural Research Insitute GmbH</organization>
-			<roles>
-				<role>Owner</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>Europe/Berlin</timezone>
-		</developer>
+        <developer>
+            <id>EM</id>
+            <name>Erwin Müller</name>
+            <email>erwin.mueller@deventm.org</email>
+            <timezone>Europe/Berlin</timezone>
+            <organization>Advanced Natural Research Institute</organization>
+            <organizationUrl>https://anrisoftware.com</organizationUrl>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
 	</developers>
 
-	<scm>
-        <connection>scm:git:${custom.gitpublic.url}globalpom-installation.git</connection>
-        <developerConnection>scm:git:${custom.gitpublic.url}globalpom-installation.git</developerConnection>
-        <url>https://anrisoftware.com/gitpublic/globalpom-installation.git/</url>
-	</scm>
+    <issueManagement>
+        <system>Redmine</system>
+        <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@anrisoftware.com:globalpom-installation.git</connection>
+        <developerConnection>scm:git:git@anrisoftware.com:globalpom-installation.git</developerConnection>
+        <url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar/repository</url>
+    </scm>
 
     <distributionManagement>
+        <site>
+            <id>anrisoftware</id>
+            <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+        </site>
         <repository>
             <id>osssonatype</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
@@ -160,7 +170,7 @@
 		                    <dependency>
 		                        <groupId>com.anrisoftware.globalpom</groupId>
 		                        <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-		                        <version>1.4</version>
+		                        <version>${project.custom.singlejar_assembly.version}</version>
 		                    </dependency>
 		                </dependencies>
 		                <configuration>

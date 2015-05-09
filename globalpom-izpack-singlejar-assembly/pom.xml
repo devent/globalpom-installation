@@ -6,21 +6,16 @@
 	<parent>
 		<groupId>com.anrisoftware.globalpom</groupId>
 		<artifactId>globalpom-parent</artifactId>
-		<version>1.38</version>
+		<version>1.39</version>
 		<relativePath />
 	</parent>
 
 	<artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-	<version>1.4</version>
+	<version>1.5-SNAPSHOT</version>
 	<name>Installation :: IzPack :: Single Jar Assembly</name>
 	<description>Custom assembly to create a Jar with all dependencies and services properties merged.</description>
 	<inceptionYear>2012</inceptionYear>
 	<url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly</url>
-
-	<issueManagement>
-		<system>Redmine</system>
-		<url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly</url>
-	</issueManagement>
 
 	<licenses>
 		<license>
@@ -32,25 +27,40 @@
 
 	<developers>
 		<developer>
-			<id>EM</id>
-			<name>Erwin Müller</name>
-			<email>erwin.mueller@deventm.org</email>
-			<organization>Advanced Natural Research Insitute GmbH</organization>
-			<roles>
-				<role>Owner</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>Europe/Berlin</timezone>
+            <id>EM</id>
+            <name>Erwin Müller</name>
+            <email>erwin.mueller@deventm.org</email>
+            <timezone>Europe/Berlin</timezone>
+            <organization>Advanced Natural Research Institute</organization>
+            <organizationUrl>https://anrisoftware.com</organizationUrl>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
 		</developer>
 	</developers>
 
-	<scm>
-		<connection>scm:git:${custom.gitpublic.url}globalpom-installation.git</connection>
-		<developerConnection>scm:git:${custom.gitpublic.url}globalpom-installation.git</developerConnection>
-		<url>https://anrisoftware.com/gitpublic/globalpom-installation.git/</url>
-	</scm>
+    <organization>
+        <name>Advanced Natural Research Institute</name>
+        <url>https://anrisoftware.com</url>
+    </organization>
+
+    <issueManagement>
+        <system>Redmine</system>
+        <url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@anrisoftware.com:globalpom-installation.git</connection>
+        <developerConnection>scm:git:git@anrisoftware.com:globalpom-installation.git</developerConnection>
+        <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack/repository</url>
+    </scm>
 
     <distributionManagement>
+        <site>
+            <id>anrisoftware</id>
+            <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+        </site>
         <repository>
             <id>osssonatype</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
