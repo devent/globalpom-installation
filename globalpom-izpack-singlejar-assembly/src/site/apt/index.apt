@@ -39,10 +39,34 @@ SCM
 Maven
 
 ---
-<parent>
-    <groupId>com.anrisoftware.globalpom</groupId>
-    <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-    <version>1.5</version>
-    <relativePath />
-</parent>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.anrisoftware.globalpom</groupId>
+            <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
+            <version>1.5</version>
+        </dependency>
+    </dependencies>
+    <configuration>
+        <archive>
+            <manifest>
+                <mainClass>${project.custom.app.mainclass}</mainClass>
+            </manifest>
+        </archive>
+        <descriptorRefs>
+            <descriptorRef>single-jar</descriptorRef>
+        </descriptorRefs>
+    </configuration>
+    <executions>
+        <execution>
+            <id>make-my-jar-with-dependencies</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
 ---
