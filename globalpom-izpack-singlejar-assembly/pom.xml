@@ -53,7 +53,7 @@
     <scm>
         <connection>scm:git:git@anrisoftware.com:globalpom-installation.git</connection>
         <developerConnection>scm:git:git@anrisoftware.com:globalpom-installation.git</developerConnection>
-        <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack/repository</url>
+        <url>https://anrisoftware.com/projects/projects/globalpom-installation/repository</url>
     </scm>
 
     <distributionManagement>
