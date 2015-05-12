@@ -47,7 +47,7 @@
         <project.custom.izpack.jarfile>${project.artifactId}-${project.version}-single-jar.jar</project.custom.izpack.jarfile>
 		<project.custom.izpack.mainclass>com.izforge.izpack.installer.Installer</project.custom.izpack.mainclass>
         <project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
-        <project.custom.singlejar_assembly.version>1.5-SNAPSHOT</project.custom.singlejar_assembly.version>
+        <project.custom.singlejar_assembly.version>1.5</project.custom.singlejar_assembly.version>
 	</properties>
 
 	<licenses>
