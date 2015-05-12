@@ -1,0 +1,23 @@
+Installer support. Defines the new profile that will bundle and create an installer Jar file.
+
+h2. Active Projects
+
+h3.  IzPack Install
+
+IzPack installer support. Defines a compile-izpack profile that will bundle and create an IzPack installer Jar file from the listed dependencies.
+
+* "globalpom-izpack":https://anrisoftware.com/projects/projects/globalpom-groovy-izpack - "2.3-rc4 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack/2.3-rc4 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack/
+
+h3. IzPack Single Jar Install
+
+IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.
+
+* "globalpom-izpack-singlejar":https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar - "2.6-rc4 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack-singlejar/2.6-rc4 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack-singlejar/
+
+h3. IzPack Single Jar Assembly
+
+Custom assembly to create a Jar with all dependencies and services properties merged.
+
+* "globalpom-izpack-singlejar-assembly":https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly - "1.4 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack-singlejar-assembly/1.4 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack-singlejar-assembly/
+
+All projects are Licensed under a LGPLv3 License. Permissions beyond the scope of this license may be available at erwin.mueller@deventm.org.
