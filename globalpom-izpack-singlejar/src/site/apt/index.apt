@@ -79,9 +79,7 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.app.type>>> | The application type, can be a GUI or console application, defaults to <<<"gui">>>.
 *-----*------*
- <<<project.custom.app.file.version>>> | The application file version string, defaults to <<<"1.0.0.0">>>.
-*-----*------*
- <<<project.custom.app.original.filename>>> | The application original file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}.exe">>>.
+ <<<project.custom.app.jarfilename>>> | The packaged application file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}-single-jar">>>. It is used for packaging the Windows executable file.
 *-----*------*
  <<<project.custom.izpack.version>>> | The IzPack version, defaults to <<<"5.0.0-rc4">>>.
 *-----*------*
@@ -97,17 +95,95 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.izpack.readme>>> | Sets the path for the readme file for the IzPack packager that is shown in the info-panel, defaults to <<<"doc/en/readme.txt">>>.
 *-----*------*
+ <<<project.custom.izpack.jarfilename>>> | The IzPack installation Jar file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.izpack.mainclass>>> | The IzPack main class fully qualified name, defaults to <<<"com.izforge.izpack.installer.Installer">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.fileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.txtfileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.filedescription>>> | The application installer file description string, defaults to <<<"$\{project.custom.app.description\}">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.copyright>>> | The application installer copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.productversion>>> | The product installer version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.txtproductversion>>> | The product installer version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.productname>>> | The product installer name string, defaults to <<<"$\{project.custom.app.name\}">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.originalfilename>>> | The original installer file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.internalname>>> | The internal installer file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.fileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.txtfileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.filedescription>>> | The application file description string, defaults to <<<"$\{project.custom.app.description\}">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.copyright>>> | The application copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.productversion>>> | The product version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.txtproductversion>>> | The product version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.productname>>> | The product name string, defaults to <<<"$\{project.custom.app.name\}">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.originalfilename>>> | The original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>. It is used for packaging the Windows application executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.internalname>>> | The internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>. It is used for packaging the Windows application executable file.
+*-----*------*
  <<<project.custom.jre.minversion>>> | Sets the minimal JRE version string, defaults to <<<"$\{project.custom.source.source\}.0">>>.
 *-----*------*
+ <<<project.custom.singlejar_assembly.version>>> | Sets the version of the <<<globalpom-izpack-singlejar-assembly>>> assembly module version, defaults to <<<"1.5">>>.
+*-----*------*
 
-* Goals
+* Profiles
+
+** compile-izpack
 
   To package the installer Jar for the <<<project-install>>>, Maven must be
 called with the <<<package>>> goal and with the <<<compile-izpack>>> profile
-active.
+active. Two Jar files will be created after the successfully packaging, the
+<<<project-install-VERSION-single-jar.jar>>>, which is the executable Jar file
+of the project that contains all the dependencies,
+and <<<project-install-VERSION.jar>>>, which is the installer Jar. The
+placeholder <<<VERSION>>> is replaced by the project's version string.
 
 ---
 project-install/ $ mvn package -P compile-izpack
+---
+
+** make-install-exe
+
+  To package the installer Windows executable for the <<<project-install>>>,
+Maven must be called with the <<<package>>> goal and
+with the <<<make-install-exe>>> profile active. The installer Jar
+from the <<<compile-izpack>>>
+profile <<<project-install-VERSION.jar>>> must exists in the target directory.
+After the goal successfully finished, the
+file <<<project-install-VERSION.exe>>> is created. The
+placeholder <<<VERSION>>> is replaced by the project's version string.
+
+---
+project-install/ $ mvn package -P make-install-exe
+---
+
+** make-exe
+
+  To package the application Windows executable for the <<<project-install>>>,
+Maven must be called with the <<<package>>> goal and
+with the <<<make-exe>>> profile active. The bundled Jar
+from the <<<compile-izpack>>>
+profile <<<project-install-VERSION-single-jar.jar>>> must exists in the
+target directory. After the goal successfully finished, the
+file <<<project-install-VERSION-single-jar.exe>>> is created. The
+placeholder <<<VERSION>>> is replaced by the project's version string.
+
+---
+project-install/ $ mvn package -P make-exe
 ---
 
 SCM

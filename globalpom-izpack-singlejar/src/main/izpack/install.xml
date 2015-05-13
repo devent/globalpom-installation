@@ -67,7 +67,7 @@
 		<pack name="Required" preselected="yes" required="yes"
 			installGroups="Required">
 			<description>Required files to run the application.</description>
-			<file src="../${project.custom.izpack.jarfile}" targetdir="$INSTALL_PATH/lib/" />
+			<file src="../${project.custom.app.jarfilename}.jar" targetdir="$INSTALL_PATH/lib/" />
 			<fileset dir="etc" targetdir="$INSTALL_PATH/etc" />
 			<fileset dir="doc" targetdir="$INSTALL_PATH/doc" />
 		</pack>
