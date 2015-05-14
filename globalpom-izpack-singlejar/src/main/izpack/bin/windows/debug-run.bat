@@ -1,5 +1,5 @@
 @REM
-@REM Copyright 2011-2014 Erwin Müller <erwin.mueller@deventm.org>
+@REM Copyright 2011-2015 Erwin Müller <erwin.mueller@deventm.org>
 @REM
 @REM This file is part of globalpom-izpack-singlejar.
 @REM

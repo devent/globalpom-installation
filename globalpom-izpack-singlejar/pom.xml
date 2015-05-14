@@ -6,14 +6,14 @@
 	<parent>
 		<artifactId>globalpom-parent</artifactId>
 		<groupId>com.anrisoftware.globalpom</groupId>
-		<version>1.38</version>
+		<version>1.39</version>
 		<relativePath />
 	</parent>
 
 	<artifactId>globalpom-izpack-singlejar</artifactId>
 	<packaging>pom</packaging>
 	<name>Installation :: IzPack :: Single Jar</name>
-	<version>2.6-rc4</version>
+	<version>2.7-rc4</version>
 	<description>IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.</description>
 	<inceptionYear>2011</inceptionYear>
     <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
@@ -26,13 +26,17 @@
         <project.custom.app.author.name />
         <project.custom.app.author.email />
         <project.custom.app.mainclass />
+        <project.custom.app.preclasspath></project.custom.app.preclasspath>
         <project.custom.app.organization.url>http://www.anr-institute.com</project.custom.app.organization.url>
         <project.custom.app.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.app.copyright>
         <project.custom.app.icon.unix>etc/application.png</project.custom.app.icon.unix>
         <project.custom.app.icon.windows>etc/application.ico</project.custom.app.icon.windows>
+        <project.custom.app.linuxbin>run.sh</project.custom.app.linuxbin>
+        <project.custom.app.linuxdebugbin>debug-run.sh</project.custom.app.linuxdebugbin>
+        <project.custom.app.windowsbin>run.bat</project.custom.app.windowsbin>
+        <project.custom.app.windowsdebugbin>debug-run.bat</project.custom.app.windowsdebugbin>
         <project.custom.app.type>gui</project.custom.app.type>
-        <project.custom.app.file.version>1.0.0.0</project.custom.app.file.version>
-        <project.custom.app.original.filename>${project.artifactId}-${project.version}.exe</project.custom.app.original.filename>
+        <project.custom.app.jarfilename>${project.artifactId}-${project.version}-single-jar</project.custom.app.jarfilename>
         <project.custom.izpack.version>5.0.0-rc4</project.custom.izpack.version>
         <project.custom.izpack.staging.dir>${project.build.directory}/staging</project.custom.izpack.staging.dir>
         <project.custom.izpack.resources.dir>src/main/izpack</project.custom.izpack.resources.dir>
@@ -40,15 +44,32 @@
         <project.custom.izpack.gui.width>536</project.custom.izpack.gui.width>
         <project.custom.izpack.gui.height>428</project.custom.izpack.gui.height>
         <project.custom.izpack.readme>doc/en/readme.txt</project.custom.izpack.readme>
-        <project.custom.izpack.jarfile>${project.artifactId}-${project.version}-single-jar.jar</project.custom.izpack.jarfile>
-		<project.custom.izpack.mainclass>com.izforge.izpack.installer.Installer</project.custom.izpack.mainclass>
+        <project.custom.izpack.jarfilename>${project.artifactId}-${project.version}</project.custom.izpack.jarfilename>
+		<project.custom.izpack.mainclass>com.izforge.izpack.installer.bootstrap.Installer</project.custom.izpack.mainclass>
+		<project.custom.izpack.preclasspath></project.custom.izpack.preclasspath>
+		<project.custom.launch4j.install.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.install.icon>
+		<project.custom.launch4j.install.fileversion>1.0.0.0</project.custom.launch4j.install.fileversion>
+		<project.custom.launch4j.install.txtfileversion>1.0.0.0</project.custom.launch4j.install.txtfileversion>
+		<project.custom.launch4j.install.filedescription>${project.custom.app.description}</project.custom.launch4j.install.filedescription>
+		<project.custom.launch4j.install.copyright>${project.custom.app.copyright}</project.custom.launch4j.install.copyright>
+		<project.custom.launch4j.install.productversion>1.0.0.0</project.custom.launch4j.install.productversion>
+		<project.custom.launch4j.install.txtproductversion>${project.custom.app.version}</project.custom.launch4j.install.txtproductversion>
+		<project.custom.launch4j.install.productname>${project.custom.app.name}</project.custom.launch4j.install.productname>
+        <project.custom.launch4j.install.originalfilename>${project.custom.app.jarfilename}.exe</project.custom.launch4j.install.originalfilename>
+		<project.custom.launch4j.install.internalname>${project.custom.app.jarfilename}.jar</project.custom.launch4j.install.internalname>
+        <project.custom.launch4j.app.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.app.icon>
+        <project.custom.launch4j.app.fileversion>1.0.0.0</project.custom.launch4j.app.fileversion>
+        <project.custom.launch4j.app.txtfileversion>1.0.0.0</project.custom.launch4j.app.txtfileversion>
+        <project.custom.launch4j.app.filedescription>${project.custom.app.description}</project.custom.launch4j.app.filedescription>
+        <project.custom.launch4j.app.copyright>${project.custom.app.copyright}</project.custom.launch4j.app.copyright>
+        <project.custom.launch4j.app.productversion>1.0.0.0</project.custom.launch4j.app.productversion>
+        <project.custom.launch4j.app.txtproductversion>${project.custom.app.version}</project.custom.launch4j.app.txtproductversion>
+        <project.custom.launch4j.app.productname>${project.custom.app.name}</project.custom.launch4j.app.productname>
+        <project.custom.launch4j.app.originalfilename>${project.custom.app.jarfilename}.exe</project.custom.launch4j.app.originalfilename>
+        <project.custom.launch4j.app.internalname>${project.custom.app.jarfilename}.jar</project.custom.launch4j.app.internalname>
         <project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
+        <project.custom.singlejar_assembly.version>1.5</project.custom.singlejar_assembly.version>
 	</properties>
-
-	<issueManagement>
-		<system>Redmine</system>
-		<url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
-	</issueManagement>
 
 	<licenses>
 		<license>
@@ -59,26 +80,36 @@
 	</licenses>
 
 	<developers>
-		<developer>
-			<id>EM</id>
-			<name>Erwin Müller</name>
-			<email>erwin.mueller@deventm.org</email>
-			<organization>Advanced Natural Research Insitute GmbH</organization>
-			<roles>
-				<role>Owner</role>
-				<role>Developer</role>
-			</roles>
-			<timezone>Europe/Berlin</timezone>
-		</developer>
+        <developer>
+            <id>EM</id>
+            <name>Erwin Müller</name>
+            <email>erwin.mueller@deventm.org</email>
+            <timezone>Europe/Berlin</timezone>
+            <organization>Advanced Natural Research Institute</organization>
+            <organizationUrl>https://anrisoftware.com</organizationUrl>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
 	</developers>
 
-	<scm>
-        <connection>scm:git:${custom.gitpublic.url}globalpom-installation.git</connection>
-        <developerConnection>scm:git:${custom.gitpublic.url}globalpom-installation.git</developerConnection>
-        <url>https://anrisoftware.com/gitpublic/globalpom-installation.git/</url>
-	</scm>
+    <issueManagement>
+        <system>Redmine</system>
+        <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@anrisoftware.com:globalpom-installation.git</connection>
+        <developerConnection>scm:git:git@anrisoftware.com:globalpom-installation.git</developerConnection>
+        <url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar/repository</url>
+    </scm>
 
     <distributionManagement>
+        <site>
+            <id>anrisoftware</id>
+            <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+        </site>
         <repository>
             <id>osssonatype</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
@@ -143,6 +174,11 @@
 				<artifactId>izpack-maven-plugin</artifactId>
 				<version>${project.custom.izpack.version}</version>
 			</plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.6</version>
+            </plugin>
 		</plugins>
 	</pluginManagement>
 
@@ -160,7 +196,7 @@
 		                    <dependency>
 		                        <groupId>com.anrisoftware.globalpom</groupId>
 		                        <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-		                        <version>1.4</version>
+		                        <version>${project.custom.singlejar_assembly.version}</version>
 		                    </dependency>
 		                </dependencies>
 		                <configuration>
@@ -254,27 +290,28 @@
 								</goals>
 								<configuration>
 									<headerType>gui</headerType>
-									<outfile>target/${project.artifactId}-${project.version}.exe</outfile>
-									<jar>target/${project.artifactId}-${project.version}.jar</jar>
-									<errTitle>${project.artifactId}-${project.version}</errTitle>
+									<outfile>target/${project.custom.izpack.jarfilename}.exe</outfile>
+									<jar>target/${project.custom.izpack.jarfilename}.jar</jar>
+									<errTitle>${project.custom.izpack.jarfilename}</errTitle>
 									<classPath>
 										<mainClass>${project.custom.izpack.mainclass}</mainClass>
 										<addDependencies>false</addDependencies>
-										<preCp>anything</preCp>
+										<preCp>${project.custom.izpack.preclasspath}</preCp>
 									</classPath>
+									<icon>${project.custom.launch4j.install.icon}</icon>
 									<jre>
 										<minVersion>${project.custom.jre.minversion}</minVersion>
 									</jre>
 									<versionInfo>
-										<fileVersion>${project.custom.app.file.version}</fileVersion>
-										<txtFileVersion>${project.custom.app.version}</txtFileVersion>
-										<fileDescription>${project.custom.app.description}</fileDescription>
-										<copyright>${project.custom.app.copyright}</copyright>
-										<productVersion>${project.custom.app.file.version}</productVersion>
-										<txtProductVersion>${project.custom.app.version}</txtProductVersion>
-										<productName>${project.custom.app.name}</productName>
-										<internalName>${project.custom.app.name}</internalName>
-										<originalFilename>${project.custom.app.original.filename}</originalFilename>
+										<fileVersion>${project.custom.launch4j.install.fileversion}</fileVersion>
+										<txtFileVersion>${project.custom.launch4j.install.txtfileversion}</txtFileVersion>
+										<fileDescription>${project.custom.launch4j.install.filedescription}</fileDescription>
+										<copyright>${project.custom.launch4j.install.copyright}</copyright>
+										<productVersion>${project.custom.launch4j.install.productversion}</productVersion>
+										<txtProductVersion>${project.custom.launch4j.install.txtproductversion}</txtProductVersion>
+										<productName>${project.custom.launch4j.install.productname}</productName>
+										<internalName>${project.custom.launch4j.install.internalname}</internalName>
+										<originalFilename>${project.custom.launch4j.install.originalfilename}</originalFilename>
 									</versionInfo>
 								</configuration>
 							</execution>
@@ -308,15 +345,25 @@
                                             <regexMessage>Property project.custom.author.email must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.original.filename</property>
-                                            <regex>.{1,50}\.exe$</regex>
-                                            <regexMessage>Property project.custom.install.original.filename must be set. It cannot exceed 50 characters. It must end with ".exe".</regexMessage>
+                                            <property>project.custom.launch4j.install.filedescription</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.install.filedescription must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.install.originalfilename</property>
+                                            <regex>.{1,50}$</regex>
+                                            <regexMessage>Property project.custom.launch4j.install.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.install.internalname</property>
+                                            <regex>.{1,50}$</regex>
+                                            <regexMessage>Property project.custom.launch4j.install.internalname must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                         <requireFilesExist>
                                             <files>
-                                                <file>target/${project.artifactId}-${project.version}-standard.jar</file>
+                                                <file>target/${project.custom.izpack.jarfilename}.jar</file>
                                             </files>
-                                            <message>File target/${project.artifactId}-${project.version}-standard.jar must exists. Run profile compile-izpack first.</message>
+                                            <message>File target/${project.custom.izpack.jarfilename}.jar must exists. Run profile compile-izpack first.</message>
                                         </requireFilesExist>
                                     </rules>
 									<fail>true</fail>
@@ -345,27 +392,28 @@
                                 </goals>
                                 <configuration>
                                     <headerType>${project.custom.app.type}</headerType>
-                                    <outfile>target/${project.artifactId}-${project.version}-single-jar.exe</outfile>
-                                    <jar>target/${project.artifactId}-${project.version}-single-jar.jar</jar>
-                                    <errTitle>${project.artifactId}-${project.version}</errTitle>
+                                    <outfile>target/${project.custom.app.jarfilename}.exe</outfile>
+                                    <jar>target/${project.custom.app.jarfilename}.jar</jar>
+                                    <errTitle>${project.custom.app.jarfilename}</errTitle>
                                     <classPath>
                                         <mainClass>${project.custom.app.mainclass}</mainClass>
                                         <addDependencies>false</addDependencies>
-                                        <preCp>anything</preCp>
+                                        <preCp>${project.custom.app.preclasspath}</preCp>
                                     </classPath>
+                                    <icon>${project.custom.launch4j.app.icon}</icon>
                                     <jre>
                                         <minVersion>${project.custom.jre.minversion}</minVersion>
                                     </jre>
                                     <versionInfo>
-                                        <fileVersion>${project.custom.app.file.version}</fileVersion>
-                                        <txtFileVersion>${project.custom.app.version}</txtFileVersion>
-                                        <fileDescription>${project.custom.app.description}</fileDescription>
-                                        <copyright>${project.custom.app.copyright}</copyright>
-                                        <productVersion>${project.custom.app.file.version}</productVersion>
-                                        <txtProductVersion>${project.custom.app.version}</txtProductVersion>
-                                        <productName>${project.custom.app.name}</productName>
-                                        <internalName>${project.custom.app.name}-single-jar</internalName>
-                                        <originalFilename>${project.custom.app.original.filename}</originalFilename>
+                                        <fileVersion>${project.custom.launch4j.app.fileversion}</fileVersion>
+                                        <txtFileVersion>${project.custom.launch4j.app.txtfileversion}</txtFileVersion>
+                                        <fileDescription>${project.custom.launch4j.app.filedescription}</fileDescription>
+                                        <copyright>${project.custom.launch4j.app.copyright}</copyright>
+                                        <productVersion>${project.custom.launch4j.app.productversion}</productVersion>
+                                        <txtProductVersion>${project.custom.launch4j.app.txtproductversion}</txtProductVersion>
+                                        <productName>${project.custom.launch4j.app.productname}</productName>
+                                        <internalName>${project.custom.launch4j.app.internalname}</internalName>
+                                        <originalFilename>${project.custom.launch4j.app.originalfilename}</originalFilename>
                                     </versionInfo>
                                 </configuration>
                             </execution>
@@ -404,15 +452,25 @@
                                             <regexMessage>Property project.custom.app.type must be set. Property must be either "gui" or "cli".</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.original.filename</property>
-                                            <regex>.{1,50}\.exe$</regex>
-                                            <regexMessage>Property project.custom.original.filename must be set. It cannot exceed 50 characters. It must end with ".exe".</regexMessage>
+                                            <property>project.custom.launch4j.app.filedescription</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.app.filedescription must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.app.originalfilename</property>
+                                            <regex>.{1,50}$</regex>
+                                            <regexMessage>Property project.custom.launch4j.app.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.app.internalname</property>
+                                            <regex>.{1,50}$</regex>
+                                            <regexMessage>Property project.custom.launch4j.app.internalname must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                         <requireFilesExist>
                                             <files>
-                                                <file>target/${project.artifactId}-${project.version}-single-jar.jar</file>
+                                                <file>target/${project.custom.app.jarfilename}.jar</file>
                                             </files>
-                                            <message>File target/${project.artifactId}-${project.version}-single-jar.jar must exists. Run profile compile-izpack first.</message>
+                                            <message>File target/${project.custom.app.jarfilename}.jar must exists. Run profile compile-izpack first.</message>
                                         </requireFilesExist>
                                     </rules>
                                     <fail>true</fail>
