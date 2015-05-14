@@ -13,7 +13,7 @@
 	<artifactId>globalpom-izpack-singlejar</artifactId>
 	<packaging>pom</packaging>
 	<name>Installation :: IzPack :: Single Jar</name>
-	<version>2.7-rc4</version>
+	<version>2.7-rc4-SNAPSHOT</version>
 	<description>IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.</description>
 	<inceptionYear>2011</inceptionYear>
     <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar</url>
@@ -26,6 +26,7 @@
         <project.custom.app.author.name />
         <project.custom.app.author.email />
         <project.custom.app.mainclass />
+        <project.custom.app.preclasspath></project.custom.app.preclasspath>
         <project.custom.app.organization.url>http://www.anr-institute.com</project.custom.app.organization.url>
         <project.custom.app.copyright>${project.custom.year} ${project.custom.user.name}</project.custom.app.copyright>
         <project.custom.app.icon.unix>etc/application.png</project.custom.app.icon.unix>
@@ -44,7 +45,9 @@
         <project.custom.izpack.gui.height>428</project.custom.izpack.gui.height>
         <project.custom.izpack.readme>doc/en/readme.txt</project.custom.izpack.readme>
         <project.custom.izpack.jarfilename>${project.artifactId}-${project.version}</project.custom.izpack.jarfilename>
-		<project.custom.izpack.mainclass>com.izforge.izpack.installer.Installer</project.custom.izpack.mainclass>
+		<project.custom.izpack.mainclass>com.izforge.izpack.installer.bootstrap.Installer</project.custom.izpack.mainclass>
+		<project.custom.izpack.preclasspath></project.custom.izpack.preclasspath>
+		<project.custom.launch4j.install.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.install.icon>
 		<project.custom.launch4j.install.fileversion>1.0.0.0</project.custom.launch4j.install.fileversion>
 		<project.custom.launch4j.install.txtfileversion>1.0.0.0</project.custom.launch4j.install.txtfileversion>
 		<project.custom.launch4j.install.filedescription>${project.custom.app.description}</project.custom.launch4j.install.filedescription>
@@ -54,6 +57,7 @@
 		<project.custom.launch4j.install.productname>${project.custom.app.name}</project.custom.launch4j.install.productname>
         <project.custom.launch4j.install.originalfilename>${project.custom.app.jarfilename}.exe</project.custom.launch4j.install.originalfilename>
 		<project.custom.launch4j.install.internalname>${project.custom.app.jarfilename}.jar</project.custom.launch4j.install.internalname>
+        <project.custom.launch4j.app.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.app.icon>
         <project.custom.launch4j.app.fileversion>1.0.0.0</project.custom.launch4j.app.fileversion>
         <project.custom.launch4j.app.txtfileversion>1.0.0.0</project.custom.launch4j.app.txtfileversion>
         <project.custom.launch4j.app.filedescription>${project.custom.app.description}</project.custom.launch4j.app.filedescription>
@@ -292,8 +296,9 @@
 									<classPath>
 										<mainClass>${project.custom.izpack.mainclass}</mainClass>
 										<addDependencies>false</addDependencies>
-										<preCp>anything</preCp>
+										<preCp>${project.custom.izpack.preclasspath}</preCp>
 									</classPath>
+									<icon>${project.custom.launch4j.install.icon}</icon>
 									<jre>
 										<minVersion>${project.custom.jre.minversion}</minVersion>
 									</jre>
@@ -393,8 +398,9 @@
                                     <classPath>
                                         <mainClass>${project.custom.app.mainclass}</mainClass>
                                         <addDependencies>false</addDependencies>
-                                        <preCp>anything</preCp>
+                                        <preCp>${project.custom.app.preclasspath}</preCp>
                                     </classPath>
+                                    <icon>${project.custom.launch4j.app.icon}</icon>
                                     <jre>
                                         <minVersion>${project.custom.jre.minversion}</minVersion>
                                     </jre>

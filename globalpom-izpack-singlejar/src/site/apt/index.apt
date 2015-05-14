@@ -61,6 +61,8 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.app.mainclass>>> | The application main class, must be set.
 *-----*------*
+ <<<project.custom.app.preclasspath>>> | The pre class path application arguments, defaults to <<<"">>>, empty.
+*-----*------*
  <<<project.custom.app.organization.url>>> | The application organization Internet address, defaults to <<<"http://www.anr-institute.com">>>. Should probably be changed.
 *-----*------*
  <<<project.custom.app.copyright>>> | The application copyright disclaimer, defaults to <<<"$\{project.custom.year\} $\{project.custom.author.name\}">>>.
@@ -97,7 +99,11 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.izpack.jarfilename>>> | The IzPack installation Jar file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.izpack.mainclass>>> | The IzPack main class fully qualified name, defaults to <<<"com.izforge.izpack.installer.Installer">>>. It is used for packaging the Windows installer executable file.
+ <<<project.custom.izpack.mainclass>>> | The IzPack main class fully qualified name, defaults to <<<"com.izforge.izpack.installer.bootstrap.Installer">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.izpack.preclasspath>>> | Parameters for the IzPack class path, defaults to <<<"">>>, empty. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.install.icon>>> | The application installer icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
  <<<project.custom.launch4j.install.fileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
@@ -116,6 +122,8 @@ the <<<pom.xml>>> file;
  <<<project.custom.launch4j.install.originalfilename>>> | The original installer file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
  <<<project.custom.launch4j.install.internalname>>> | The internal installer file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>. It is used for packaging the Windows installer executable file.
+*-----*------*
+ <<<project.custom.launch4j.app.icon>>> | The application icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>. It is used for packaging the Windows application executable file.
 *-----*------*
  <<<project.custom.launch4j.app.fileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows application executable file.
 *-----*------*
