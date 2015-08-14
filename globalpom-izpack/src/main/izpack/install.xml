@@ -46,10 +46,8 @@
 
 	<resources>
 		<res id="InfoPanel.info" src="${project.custom.izpack.readme}" />
-		<res id="shortcutSpec.xml" src="win_shortcutSpec.xml" />
+		<res id="shortcutSpec.xml" src="shortcutSpec.xml" />
 		<res id="Unix_shortcutSpec.xml" src="unix_shortcutSpec.xml" />
-		<res id="packsLang.xml" src="i18n/packsLang.xml" />
-		<res id="packsLang.xml_eng" src="i18n/packsLang.xml_eng" />
 	</resources>
 
 	<panels>

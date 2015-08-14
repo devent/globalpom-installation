@@ -26,7 +26,7 @@
     <programGroup defaultName="${project.custom.app.name}"
         location="startMenu" />
     <shortcut
-       name="Start ${project.custom.app.name}"
+       name="${project.custom.app.name}"
      programGroup="yes"
      desktop="yes"
      applications="no"
@@ -38,7 +38,7 @@
      description="Start ${project.custom.app.name}. ${project.custom.app.description}"
      type="Application"
      encoding="UTF-8"
-     terminal="true"
+     terminal="false"
      KdeSubstUID="false"
      initialState="normal"
      iconFile="$INSTALL_PATH/${project.custom.app.icon.unix}">
@@ -47,7 +47,7 @@
     <shortcut
        name="Debug Mode ${project.custom.app.name}"
      programGroup="yes"
-     desktop="yes"
+     desktop="no"
      applications="no"
      startMenu="yes"
      startup="no"
