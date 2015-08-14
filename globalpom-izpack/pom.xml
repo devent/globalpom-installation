@@ -19,6 +19,7 @@
 	<url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack</url>
 
 	<properties>
+        <!-- application -->
 		<project.custom.app.name>${project.name}</project.custom.app.name>
 		<project.custom.app.description></project.custom.app.description>
         <project.custom.app.path>${project.name}</project.custom.app.path>
@@ -34,6 +35,7 @@
         <project.custom.app.linuxdebugbin>debug-run.sh</project.custom.app.linuxdebugbin>
         <project.custom.app.windowsbin>run.bat</project.custom.app.windowsbin>
         <project.custom.app.windowsdebugbin>debug-run.bat</project.custom.app.windowsdebugbin>
+        <!-- izpack installer -->
         <project.custom.izpack.version>5.0.3</project.custom.izpack.version>
         <project.custom.izpack.staging.dir>${project.build.directory}/staging</project.custom.izpack.staging.dir>
         <project.custom.izpack.resources.dir>src/main/izpack</project.custom.izpack.resources.dir>
@@ -42,6 +44,32 @@
 		<project.custom.izpack.gui.height>428</project.custom.izpack.gui.height>
 		<project.custom.izpack.readme>doc/en/readme.txt</project.custom.izpack.readme>
         <project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
+        <!-- launch4j installer -->
+        <project.custom.launch4j.izpack.mainclass>com.izforge.izpack.installer.bootstrap.Installer</project.custom.launch4j.izpack.mainclass>
+        <project.custom.launch4j.izpack.preclasspath></project.custom.launch4j.izpack.preclasspath>
+        <project.custom.launch4j.install.jarfilename>${project.artifactId}-${project.version}</project.custom.launch4j.install.jarfilename>
+        <project.custom.launch4j.install.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.install.icon>
+        <project.custom.launch4j.install.fileversion>1.0.0.0</project.custom.launch4j.install.fileversion>
+        <project.custom.launch4j.install.txtfileversion>1.0.0.0</project.custom.launch4j.install.txtfileversion>
+        <project.custom.launch4j.install.filedescription>${project.custom.app.description}</project.custom.launch4j.install.filedescription>
+        <project.custom.launch4j.install.copyright>${project.custom.app.copyright}</project.custom.launch4j.install.copyright>
+        <project.custom.launch4j.install.productversion>1.0.0.0</project.custom.launch4j.install.productversion>
+        <project.custom.launch4j.install.txtproductversion>${project.custom.app.version}</project.custom.launch4j.install.txtproductversion>
+        <project.custom.launch4j.install.productname>${project.custom.app.name}</project.custom.launch4j.install.productname>
+        <project.custom.launch4j.install.originalfilename>${project.custom.launch4j.install.jarfilename}.exe</project.custom.launch4j.install.originalfilename>
+        <project.custom.launch4j.install.internalname>${project.custom.launch4j.install.jarfilename}.jar</project.custom.launch4j.install.internalname>
+        <!-- launch4j application launcher -->
+        <project.custom.launch4j.app.type>gui</project.custom.launch4j.app.type>
+        <project.custom.launch4j.app.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.app.icon>
+        <project.custom.launch4j.app.fileversion>1.0.0.0</project.custom.launch4j.app.fileversion>
+        <project.custom.launch4j.app.txtfileversion>1.0.0.0</project.custom.launch4j.app.txtfileversion>
+        <project.custom.launch4j.app.filedescription>${project.custom.app.description}</project.custom.launch4j.app.filedescription>
+        <project.custom.launch4j.app.copyright>${project.custom.app.copyright}</project.custom.launch4j.app.copyright>
+        <project.custom.launch4j.app.productversion>1.0.0.0</project.custom.launch4j.app.productversion>
+        <project.custom.launch4j.app.txtproductversion>${project.custom.app.version}</project.custom.launch4j.app.txtproductversion>
+        <project.custom.launch4j.app.productname>${project.custom.app.name}</project.custom.launch4j.app.productname>
+        <project.custom.launch4j.app.originalfilename>${project.custom.app.jarfilename}.exe</project.custom.launch4j.app.originalfilename>
+        <project.custom.launch4j.app.internalname>${project.custom.app.jarfilename}.jar</project.custom.launch4j.app.internalname>
 	</properties>
 
     <licenses>
@@ -289,6 +317,113 @@
 				</plugins>
 			</build>
 		</profile>
+
+        <profile>
+            <id>make-install-exe</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                        <artifactId>launch4j-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>l4j</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>launch4j</goal>
+                                </goals>
+                                <configuration>
+                                    <headerType>gui</headerType>
+                                    <outfile>target/${project.custom.launch4j.install.jarfilename}.exe</outfile>
+                                    <jar>target/${project.custom.launch4j.install.jarfilename}.jar</jar>
+                                    <errTitle>${project.custom.launch4j.install.jarfilename}</errTitle>
+                                    <classPath>
+                                        <mainClass>${project.custom.launch4j.izpack.mainclass}</mainClass>
+                                        <addDependencies>false</addDependencies>
+                                        <preCp>${project.custom.launch4j.izpack.preclasspath}</preCp>
+                                    </classPath>
+                                    <icon>${project.custom.launch4j.install.icon}</icon>
+                                    <jre>
+                                        <minVersion>${project.custom.jre.minversion}</minVersion>
+                                    </jre>
+                                    <versionInfo>
+                                        <fileVersion>${project.custom.launch4j.install.fileversion}</fileVersion>
+                                        <txtFileVersion>${project.custom.launch4j.install.txtfileversion}</txtFileVersion>
+                                        <fileDescription>${project.custom.launch4j.install.filedescription}</fileDescription>
+                                        <copyright>${project.custom.launch4j.install.copyright}</copyright>
+                                        <productVersion>${project.custom.launch4j.install.productversion}</productVersion>
+                                        <txtProductVersion>${project.custom.launch4j.install.txtproductversion}</txtProductVersion>
+                                        <productName>${project.custom.launch4j.install.productname}</productName>
+                                        <internalName>${project.custom.launch4j.install.internalname}</internalName>
+                                        <originalFilename>${project.custom.launch4j.install.originalfilename}</originalFilename>
+                                    </versionInfo>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-property</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireProperty>
+                                            <property>project.custom.app.mainclass</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.mainclass must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.author.name</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.author.name must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.author.email</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.author.email must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.install.filedescription</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.install.filedescription must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.install.originalfilename</property>
+                                            <regex>.{1,50}$</regex>
+                                            <regexMessage>Property project.custom.launch4j.install.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.install.internalname</property>
+                                            <regex>.{1,50}$</regex>
+                                            <regexMessage>Property project.custom.launch4j.install.internalname must be set. It cannot exceed 50 characters.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.izpack.mainclass</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.izpack.mainclass must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireFilesExist>
+                                            <files>
+                                                <file>target/${project.custom.launch4j.install.jarfilename}.jar</file>
+                                            </files>
+                                            <message>File target/${project.custom.launch4j.install.jarfilename}.jar must exists. Run profile compile-izpack first.</message>
+                                        </requireFilesExist>
+                                    </rules>
+                                    <fail>true</fail>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
 
 	</profiles>
 

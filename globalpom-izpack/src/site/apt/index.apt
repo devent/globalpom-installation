@@ -43,6 +43,8 @@ the <<<pom.xml>>> file;
 
   The following properties must be set or can be adjusted.
 
+** Application Properties
+
 *-----*------*
  <<<project.custom.app.name>>> | The application name, defaults to <<<$\{project.name\}>>>
 *-----*------*
@@ -74,7 +76,13 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.app.windowsdebugbin>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
 *-----*------*
- <<<project.custom.izpack.version>>> | The IzPack version, defaults to <<<"5.0.0-rc4">>>.
+ <<<project.custom.app.type>>> | The application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
+*-----*------*
+
+** IzPack Properties
+
+*-----*------*
+ <<<project.custom.izpack.version>>> | The IzPack version, defaults to <<<"5.0.3">>>.
 *-----*------*
  <<<project.custom.izpack.staging.dir>>> | The IzPack staging directory path. That is the path to where all dependencies and resources are staged for packaging, defaults to <<<"$\{project.build.directory\}/staging">>>.
 *-----*------*
@@ -89,6 +97,36 @@ the <<<pom.xml>>> file;
  <<<project.custom.izpack.readme>>> | Sets the path for the readme file for the IzPack packager that is shown in the info-panel, defaults to <<<"doc/en/readme.txt">>>.
 *-----*------*
  <<<project.custom.jre.minversion>>> | Sets the minimal JRE version string, defaults to <<<"$\{project.custom.source.source\}.0">>>.
+*-----*------*
+
+** Launch4j Installer Properties
+
+*-----*------*
+ <<<project.custom.launch4j.izpack.mainclass>>> | The IzPack main class fully qualified name, defaults to <<<"com.izforge.izpack.installer.bootstrap.Installer">>>.
+*-----*------*
+ <<<project.custom.launch4j.izpack.preclasspath>>> | Optional parameters for the IzPack class path, defaults to <<<"">>>, empty.
+*-----*------*
+ <<<project.custom.launch4j.install.jarfilename>>> | The packaged IzPack installation Jar file name created by the <<<"compile-izpack">>> profile, defaults to <<<"$\{project.artifactId}-$\{project.version}">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.icon>>> | The Launch4j installer icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.fileversion>>> | The Launch4j installer file version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.txtfileversion>>> | The Launch4j installer file version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.filedescription>>> | The Launch4j installer file description string, defaults to <<<"$\{project.custom.app.description\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.copyright>>> | The Launch4j installer copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.productversion>>> | The Launch4j installer product version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.txtproductversion>>> | The Launch4j installer product version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.productname>>> | The Launch4j installer product name string, defaults to <<<"$\{project.custom.app.name\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.originalfilename>>> | The Launch4j installer original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>.
+*-----*------*
+ <<<project.custom.launch4j.install.internalname>>> | The Launch4j installer interal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
 *-----*------*
 
 * Goals
