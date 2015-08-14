@@ -79,6 +79,11 @@
         <project.custom.launch4j.app.productname>${project.custom.app.name}</project.custom.launch4j.app.productname>
         <project.custom.launch4j.app.originalfilename>${project.custom.launch4j.app.jarfilename}.exe</project.custom.launch4j.app.originalfilename>
         <project.custom.launch4j.app.internalname>${project.custom.launch4j.app.jarfilename}.jar</project.custom.launch4j.app.internalname>
+        <!-- launch4j uninstall -->
+        <project.custom.launch4j.unistaller.filename>uninstaller</project.custom.launch4j.unistaller.filename>
+        <project.custom.launch4j.unistaller.mainclass>com.izforge.izpack.uninstaller.Uninstaller</project.custom.launch4j.unistaller.mainclass>
+        <project.custom.launch4j.unistaller.jarfile>Uninstaller/uninstaller.jar</project.custom.launch4j.unistaller.jarfile>
+        <project.custom.launch4j.unistaller.chdir>..</project.custom.launch4j.unistaller.chdir>
 	</properties>
 
     <licenses>
@@ -546,6 +551,103 @@
                                             <property>project.custom.launch4j.app.jarfilename</property>
                                             <regex>.+</regex>
                                             <regexMessage>Property project.custom.launch4j.app.jarfilename must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                    </rules>
+                                    <fail>true</fail>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>make-uninstall-exe</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                        <artifactId>launch4j-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>l4j</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>launch4j</goal>
+                                </goals>
+                                <configuration>
+                                    <headerType>gui</headerType>
+                                    <outfile>target/${project.custom.launch4j.unistaller.filename}.exe</outfile>
+                                    <jar>${project.custom.launch4j.unistaller.jarfile}</jar>
+                                    <errTitle>${project.custom.launch4j.unistaller.jarfile}</errTitle>
+                                    <dontWrapJar>true</dontWrapJar>
+                                    <chdir>${project.custom.launch4j.unistaller.chdir}</chdir>
+                                    <classPath>
+                                        <mainClass>${project.custom.launch4j.unistaller.mainclass}</mainClass>
+                                        <addDependencies>false</addDependencies>
+                                    </classPath>
+                                    <icon>${project.custom.launch4j.app.icon}</icon>
+                                    <jre>
+                                        <minVersion>${project.custom.jre.minversion}</minVersion>
+                                    </jre>
+                                    <versionInfo>
+                                        <fileVersion>${project.custom.launch4j.app.fileversion}</fileVersion>
+                                        <txtFileVersion>${project.custom.launch4j.app.txtfileversion}</txtFileVersion>
+                                        <fileDescription>${project.custom.launch4j.app.filedescription}</fileDescription>
+                                        <copyright>${project.custom.launch4j.app.copyright}</copyright>
+                                        <productVersion>${project.custom.launch4j.app.productversion}</productVersion>
+                                        <txtProductVersion>${project.custom.launch4j.app.txtproductversion}</txtProductVersion>
+                                        <productName>${project.custom.launch4j.app.productname}</productName>
+                                        <internalName>${project.custom.launch4j.unistaller.jarfile}</internalName>
+                                        <originalFilename>${project.custom.launch4j.unistaller.filename}.exe</originalFilename>
+                                    </versionInfo>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-property</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <requireProperty>
+                                            <property>project.custom.app.author.name</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.app.author.email</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.unistaller.mainclass</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.unsintaller.mainclass must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.unistaller.filename</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.unistaller.filename must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.unistaller.jarfile</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.unistaller.jarfile must be set. The property cannot be empty.</regexMessage>
+                                        </requireProperty>
+                                        <requireProperty>
+                                            <property>project.custom.launch4j.app.filedescription</property>
+                                            <regex>.+</regex>
+                                            <regexMessage>Property project.custom.launch4j.app.filedescription must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                     </rules>
                                     <fail>true</fail>

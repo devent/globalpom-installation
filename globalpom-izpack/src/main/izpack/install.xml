@@ -88,6 +88,9 @@
             <fileset dir="../" targetdir="$INSTALL_PATH/bin/windows">
                 <include name="${project.custom.app.windowslauncher}" />
             </fileset>
+            <fileset dir="../" targetdir="$INSTALL_PATH/Uninstaller">
+                <include name="${project.custom.launch4j.unistaller.filename}.exe" />
+            </fileset>
 		</pack>
 	</packs>
 

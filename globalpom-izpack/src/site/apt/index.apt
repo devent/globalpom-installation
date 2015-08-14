@@ -171,6 +171,18 @@ the <<<pom.xml>>> file;
  <<<project.custom.launch4j.app.internalname>>> | The launcher internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
 *-----*------*
 
+** Launch4j Uninstaller Properties
+
+*-----*------*
+ <<<project.custom.launch4j.unistaller.filename>>> | The uninstaller file name, defaults to <<<"uninstaller">>>.
+*-----*------*
+ <<<project.custom.launch4j.unistaller.mainclass>>> | The uninstaller main fully qualified class, defaults to <<<"com.izforge.izpack.uninstaller.Uninstaller">>>.
+*-----*------*
+ <<<project.custom.launch4j.unistaller.jarfile>>> | The uninstaller Jar file, defaults to <<<"Uninstaller/uninstaller.jar">>>.
+*-----*------*
+ <<<project.custom.launch4j.unistaller.chdir>>> | To where the current working directory should be changed, defaults to <<<"..">>>.
+*-----*------*
+
 * Goals
 
   To package the installer Jar for the <<<project-install>>>, Maven must be
@@ -192,7 +204,15 @@ project-install/ $ mvn package -P make-launcher-exe
 ---
 
   That will generate the <<<app.exe>>> file in the target directory that is the
-application launcher Windows executable file. After the
+application launcher Windows executable file.
+Optionally, the uninstaller launcher Windows executable file can be generated
+by invoking the <<<package>>> goal with the <<<make-uninstall-exe>>> profile.
+
+---
+project-install/ $ mvn package -P make-uninstall-exe
+---
+
+  After the
 profile successfully finished, installer Jar must be re-generated with
 the <<<package>>> goal and with the <<<compile-izpack>>> profile
 active so that the launcher Windows executable file will be included.
@@ -211,9 +231,6 @@ to create the installation as a Windows executable file.
 ---
 project-install/ $ mvn package -P make-install-exe
 ---
-
-  That will generate the <<<project-install-1.0.exe>>> file in the target
-directory that is the Windows executable installation file.
 
 ** Summary
 
