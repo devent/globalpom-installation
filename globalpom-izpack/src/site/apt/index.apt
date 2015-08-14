@@ -72,11 +72,15 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.app.linuxdebugbin>>> | The application debug start script for Unix/Linux Systems, defaults to <<<"debug-run.sh">>>.
 *-----*------*
- <<<project.custom.app.windowsbin>>> | The application start script for Windows Systems, defaults to <<<"run.bat">>>.
+ <<<project.custom.app.windowsbin>>> | The application start script for Windows Systems, defaults to <<<"$\{project.custom.app.windowslauncher\}">>>. To use the start script instead of the Windows launcher set to <<<"$\{project.custom.app.windowsstartscript\}">>>.
 *-----*------*
- <<<project.custom.app.windowsdebugbin>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
+ <<<project.custom.app.windowsdebugbin>>> | The application debug start script for Windows Systems, defaults to <<<"$\{project.custom.app.windowsdebugscript\}">>>.
 *-----*------*
- <<<project.custom.app.type>>> | The application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
+ <<<project.custom.app.windowsstartscript>>> | The application start script for Windows Systems, defaults to <<<"run.bat">>>.
+*-----*------*
+ <<<project.custom.app.windowsdebugscript>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
+*-----*------*
+ <<<project.custom.app.windowslauncher>>> | The application start launcher for Windows Systems, defaults to <<<"$\{project.custom.launch4j.app.launcherfilename\}.exe">>>. Can be used in the short-cut specification to start the application, instead of the start script.
 *-----*------*
 
 ** IzPack Properties
@@ -106,7 +110,7 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.launch4j.izpack.preclasspath>>> | Optional parameters for the IzPack class path, defaults to <<<"">>>, empty.
 *-----*------*
- <<<project.custom.launch4j.install.jarfilename>>> | The packaged IzPack installation Jar file name created by the <<<"compile-izpack">>> profile, defaults to <<<"$\{project.artifactId}-$\{project.version}">>>.
+ <<<project.custom.launch4j.install.jarfilename>>> | The packaged IzPack installation Jar file name created by the <<<"compile-izpack">>> profile, defaults to <<<"$\{project.artifactId\}-$\{project.version\}">>>.
 *-----*------*
  <<<project.custom.launch4j.install.icon>>> | The Launch4j installer icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
 *-----*------*
@@ -129,6 +133,44 @@ the <<<pom.xml>>> file;
  <<<project.custom.launch4j.install.internalname>>> | The Launch4j installer interal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
 *-----*------*
 
+** Launch4j Application Launcher Properties
+
+*-----*------*
+ <<<project.custom.launch4j.app.type>>> | The launcher application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
+*-----*------*
+ <<<project.custom.launch4j.app.icon>>> | The launcher application icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.launcherfilename>>> | The launcher application Exe file name, defaults to <<<"$\{project.artifactId\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.jarfilename>>> | The launcher application main Jar file, must be set. That is the Jar file containing the main class.
+*-----*------*
+ <<<project.custom.launch4j.app.commandline>>> | The launcher application command line arguments, defaults to <<<"">>>, empty.
+*-----*------*
+ <<<project.custom.launch4j.app.jreopt>>> | The launcher JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.stayalive>>> | If the launcher should stay alive in the background until the application terminates, defaults to <<<"false">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.fileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.txtfileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.filedescription>>> | The launcher application file description string, defaults to <<<"$\{project.custom.app.description\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.copyright>>> | The launcher application copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.productversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.txtproductversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.productname>>> | The launcher product name string, defaults to <<<"$\{project.custom.app.name\}">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.originalfilename>>> | The launcher original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>.
+*-----*------*
+ <<<project.custom.launch4j.app.internalname>>> | The launcher internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
+*-----*------*
+
 * Goals
 
   To package the installer Jar for the <<<project-install>>>, Maven must be
@@ -136,7 +178,62 @@ called with the <<<package>>> goal and with the <<<compile-izpack>>> profile
 active.
 
 ---
+project-install/ $ mvn clean package -P compile-izpack
+---
+
+  That will generate the <<<project-install-1.0.jar>>> file in the target
+directory that is the platform independent installation Jar. After the
+profile successfully finished, the <<<package>>> goal with
+the <<<make-launcher-exe>>> profile can be run
+to create the application launcher Windows executable file.
+
+---
+project-install/ $ mvn package -P make-launcher-exe
+---
+
+  That will generate the <<<app.exe>>> file in the target directory that is the
+application launcher Windows executable file. After the
+profile successfully finished, installer Jar must be re-generated with
+the <<<package>>> goal and with the <<<compile-izpack>>> profile
+active so that the launcher Windows executable file will be included.
+
+---
 project-install/ $ mvn package -P compile-izpack
+---
+
+  That will generate the <<<project-install-1.0.jar>>> file in the target
+directory again, but this time with the launcher Windows executable file
+included. After the
+profile successfully finished, the <<<package>>> goal with
+the <<<make-install-exe>>> profile can be run
+to create the installation as a Windows executable file.
+
+---
+project-install/ $ mvn package -P make-install-exe
+---
+
+  That will generate the <<<project-install-1.0.exe>>> file in the target
+directory that is the Windows executable installation file.
+
+** Summary
+
+  To generate the platform independent files and the Windows executables,
+the following sequence should be run:
+
+---
+project-install/ $ mvn clean package -P compile-izpack && mvn package -P make-launcher-exe && mvn package -P compile-izpack && mvn package -P make-install-exe
+---
+
+  To generate just the platform independent files and the Windows installation
+executables file, the following sequence should be run, and the following
+property must be changed:
+
+---
+<project.custom.app.windowsbin>$\{project.custom.app.windowsstartscript\}</project.custom.app.windowsbin>
+---
+
+---
+project-install/ $ mvn clean package -P compile-izpack && mvn package -P make-install-exe
 ---
 
 SCM
@@ -159,7 +256,7 @@ Maven
 <parent>
     <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-izpack</artifactId>
-    <version>2.3-rc4</version>
+    <version>2.3</version>
     <relativePath />
 </parent>
 ---

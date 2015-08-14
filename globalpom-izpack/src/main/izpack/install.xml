@@ -82,9 +82,12 @@
 		<pack name="Windows" preselected="yes" required="yes" os="windows"
 			installGroups="Windows">
 			<description>Windows run files.</description>
-            <file src="bin/windows/${project.custom.app.windowsdebugbin}" targetdir="$INSTALL_PATH/bin/windows" />
-            <file src="bin/windows/${project.custom.app.windowsbin}" targetdir="$INSTALL_PATH/bin/windows" />
+            <file src="bin/windows/${project.custom.app.windowsstartscript}" targetdir="$INSTALL_PATH/bin/windows" />
+            <file src="bin/windows/${project.custom.app.windowsdebugscript}" targetdir="$INSTALL_PATH/bin/windows" />
             <file src="bin/windows/MessageBox.vbs" targetdir="$INSTALL_PATH/bin/windows" />
+            <fileset dir="../" targetdir="$INSTALL_PATH/bin/windows">
+                <include name="${project.custom.app.windowslauncher}" />
+            </fileset>
 		</pack>
 	</packs>
 
