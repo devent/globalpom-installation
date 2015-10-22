@@ -17,14 +17,17 @@
 @REM along with globalpom-izpack-singlejar. If not, see <http://www.gnu.org/licenses/>.
 @REM
 
-set lib="%CD%"\lib\*
-set log="-Dlogback.configurationFile=file:///%CD%/etc/logback.xml"
+set bashpath=%~dp0
+set bashpath=%bashpath:~0,-1%
+set apppath=%bashpath%/../..
+set lib="%apppath%"\lib\*
+set log="-Dlogback.configurationFile=file:///%apppath%/etc/logback.xml"
 set args=
 set mainClass="${project.custom.app.mainclass}"
 
 javaw -version >nul 2>&1 && ( set found=true ) || ( set found=false )
 if %found% EQU false (
-    cscript bin/windows/MessageBox.vbs "Java is not correctly installed."
+    cscript "%apppath%/bin/windows/MessageBox.vbs" "Java is not correctly installed."
     exit 1
 )
 
