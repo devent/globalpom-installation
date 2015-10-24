@@ -80,7 +80,7 @@ the <<<pom.xml>>> file;
 *-----*------*
  <<<project.custom.app.windowsdebugscript>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
 *-----*------*
- <<<project.custom.app.windowslauncher>>> | The application start launcher for Windows Systems, defaults to <<<"$\{project.custom.launch4j.app.launcherfilename\}.exe">>>. Can be used in the short-cut specification to start the application, instead of the start script.
+ <<<project.custom.app.windowslauncher>>> | The application start launcher for Windows Systems, defaults to <<<"$\{project.custom.launch4j.applauncher.launcherfilename\}.exe">>>. Can be used in the short-cut specification to start the application, instead of the start script.
 *-----*------*
 
 ** IzPack Properties
@@ -136,39 +136,39 @@ the <<<pom.xml>>> file;
 ** Launch4j Application Launcher Properties
 
 *-----*------*
- <<<project.custom.launch4j.app.type>>> | The launcher application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
+ <<<project.custom.launch4j.applauncher.type>>> | The launcher application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
 *-----*------*
- <<<project.custom.launch4j.app.icon>>> | The launcher application icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
+ <<<project.custom.launch4j.applauncher.icon>>> | The launcher application icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.launcherfilename>>> | The launcher application Exe file name, defaults to <<<"$\{project.artifactId\}">>>.
+ <<<project.custom.launch4j.applauncher.launcherfilename>>> | The launcher application Exe file name, defaults to <<<"$\{project.artifactId\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.jarfilename>>> | The launcher application main Jar file, must be set. That is the Jar file containing the main class.
+ <<<project.custom.launch4j.applauncher.jarfilename>>> | The launcher application main Jar file, must be set. That is the Jar file containing the main class.
 *-----*------*
- <<<project.custom.launch4j.app.commandline>>> | The launcher application command line arguments, defaults to <<<"">>>, empty.
+ <<<project.custom.launch4j.applauncher.commandline>>> | The launcher application command line arguments, defaults to <<<"">>>, empty.
 *-----*------*
- <<<project.custom.launch4j.app.jreopt>>> | The launcher JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
+ <<<project.custom.launch4j.applauncher.jreopt>>> | The launcher JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
 *-----*------*
- <<<project.custom.launch4j.app.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
+ <<<project.custom.launch4j.applauncher.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
 *-----*------*
- <<<project.custom.launch4j.app.stayalive>>> | If the launcher should stay alive in the background until the application terminates, defaults to <<<"false">>>.
+ <<<project.custom.launch4j.applauncher.stayalive>>> | If the launcher should stay alive in the background until the application terminates, defaults to <<<"false">>>.
 *-----*------*
- <<<project.custom.launch4j.app.fileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
+ <<<project.custom.launch4j.applauncher.fileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.txtfileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
+ <<<project.custom.launch4j.applauncher.txtfileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.filedescription>>> | The launcher application file description string, defaults to <<<"$\{project.custom.app.description\}">>>.
+ <<<project.custom.launch4j.applauncher.filedescription>>> | The launcher application file description string, defaults to <<<"$\{project.custom.app.description\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.copyright>>> | The launcher application copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>.
+ <<<project.custom.launch4j.applauncher.copyright>>> | The launcher application copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.productversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
+ <<<project.custom.launch4j.applauncher.productversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.txtproductversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
+ <<<project.custom.launch4j.applauncher.txtproductversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.productname>>> | The launcher product name string, defaults to <<<"$\{project.custom.app.name\}">>>.
+ <<<project.custom.launch4j.applauncher.productname>>> | The launcher product name string, defaults to <<<"$\{project.custom.app.name\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.originalfilename>>> | The launcher original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>.
+ <<<project.custom.launch4j.applauncher.originalfilename>>> | The launcher original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>.
 *-----*------*
- <<<project.custom.launch4j.app.internalname>>> | The launcher internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
+ <<<project.custom.launch4j.applauncher.internalname>>> | The launcher internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
 *-----*------*
 
 ** Launch4j Uninstaller Properties
@@ -238,7 +238,7 @@ project-install/ $ mvn package -P make-install-exe
 the following sequence should be run:
 
 ---
-project-install/ $ mvn clean package -P compile-izpack && mvn package -P make-launcher-exe && mvn package -P compile-izpack && mvn package -P make-install-exe
+project-install/ $ mvn clean package -P compile-izpack && mvn package -P make-launcher-exe && mvn package -P make-uninstall-exe && mvn package -P compile-izpack && mvn package -P make-install-exe
 ---
 
   To generate just the platform independent files and the Windows installation
@@ -257,7 +257,7 @@ SCM
 
 * Main
 
-  * {{{https://anrisoftware.com/projects/projects/globalpom-groovy-izpack/repository}Repository}}
+  * {{{https://anrisoftware.com/projects/projects/globalpom-installation/repository}Repository}}
 
   * git@anrisoftware.com:globalpom-installation.git
 
@@ -273,7 +273,7 @@ Maven
 <parent>
     <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-izpack</artifactId>
-    <version>2.3</version>
+    <version>2.4</version>
     <relativePath />
 </parent>
 ---
