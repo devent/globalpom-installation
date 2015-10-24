@@ -39,7 +39,7 @@
         <project.custom.app.windowsdebugscript>debug-run.bat</project.custom.app.windowsdebugscript>
         <project.custom.app.windowslauncher>${project.custom.launch4j.applauncher.launcherfilename}.exe</project.custom.app.windowslauncher>
         <!-- izpack installer -->
-        <project.custom.izpack.version>5.0.3</project.custom.izpack.version>
+        <project.custom.izpack.version>5.0.5</project.custom.izpack.version>
         <project.custom.izpack.staging.dir>${project.build.directory}/staging</project.custom.izpack.staging.dir>
         <project.custom.izpack.resources.dir>src/main/izpack</project.custom.izpack.resources.dir>
 		<project.custom.izpack.gui.resizeable>yes</project.custom.izpack.gui.resizeable>
@@ -198,7 +198,7 @@
                     <!-- Maven plugin for launch4j -->
                     <groupId>com.akathist.maven.plugins.launch4j</groupId>
                     <artifactId>launch4j-maven-plugin</artifactId>
-                    <version>1.7.7</version>
+                    <version>1.7.8</version>
                 </plugin>
 			</plugins>
 		</pluginManagement>
