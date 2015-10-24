@@ -6,13 +6,13 @@ h3.  IzPack Install
 
 IzPack installer support. Defines a compile-izpack profile that will bundle and create an IzPack installer Jar file from the listed dependencies.
 
-* "globalpom-izpack":https://anrisoftware.com/projects/projects/globalpom-groovy-izpack - "2.3-rc4 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack/2.3-rc4 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack/
+* "globalpom-izpack":https://anrisoftware.com/projects/projects/globalpom-groovy-izpack - "2.4 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack/2.4 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack/
 
 h3. IzPack Single Jar Install
 
 IzPack installer support. Bundle and create an IzPack installer Jar file. The application is bundled in a single Jar file.
 
-* "globalpom-izpack-singlejar":https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar - "2.7-rc4 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack-singlejar/2.7-rc4 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack-singlejar/
+* "globalpom-izpack-singlejar":https://anrisoftware.com/projects/projects/globalpom-groovy-izpack-singlejar - "2.7 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack-singlejar/2.7 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack-singlejar/
 
 h3. IzPack Single Jar Assembly
 
