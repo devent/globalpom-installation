@@ -273,7 +273,7 @@ Maven
 <parent>
     <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-izpack</artifactId>
-    <version>2.5</version>
+    <version>3.0</version>
     <relativePath />
 </parent>
 ---
