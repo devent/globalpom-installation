@@ -333,7 +333,7 @@ Maven
 <parent>
     <groupId>com.anrisoftware.globalpom</groupId>
     <artifactId>globalpom-izpack-singlejar</artifactId>
-    <version>2.7</version>
+    <version>3.0</version>
     <relativePath />
 </parent>
 ---
