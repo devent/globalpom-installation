@@ -1,20 +1,17 @@
 @REM
-@REM Copyright 2011-2016 Erwin Müller <erwin.mueller@deventm.org>
+@REM Copyright 2011-2021 Erwin Müller <erwin.mueller@anrisoftware.com>
 @REM
-@REM This file is part of globalpom-izpack.
+@REM Licensed under the Apache License, Version 2.0 (the "License");
+@REM you may not use this file except in compliance with the License.
+@REM You may obtain a copy of the License at
 @REM
-@REM globalpom-izpack is free software: you can redistribute it and/or modify it
-@REM under the terms of the GNU Lesser General Public License as published by the
-@REM Free Software Foundation, either version 3 of the License, or (at your
-@REM option) any later version.
+@REM     http://www.apache.org/licenses/LICENSE-2.0
 @REM
-@REM globalpom-izpack is distributed in the hope that it will be useful, but
-@REM WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-@REM FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-@REM details.
-@REM
-@REM You should have received a copy of the GNU Lesser General Public License
-@REM along with globalpom-izpack. If not, see <http://www.gnu.org/licenses/>.
+@REM Unless required by applicable law or agreed to in writing, software
+@REM distributed under the License is distributed on an "AS IS" BASIS,
+@REM WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+@REM See the License for the specific language governing permissions and
+@REM limitations under the License.
 @REM
 
 set bashpath=%~dp0

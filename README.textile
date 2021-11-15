@@ -20,4 +20,4 @@ Custom assembly to create a Jar with all dependencies and services properties me
 
 * "globalpom-izpack-singlejar-assembly":https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly - "1.5 [central]":http://mvnrepository.com/artifact/com.anrisoftware.globalpom/globalpom-izpack-singlejar-assembly/1.5 - "Report":https://anrisoftware.com/javadoc/com.anrisoftware.globalpom/globalpom-izpack-singlejar-assembly/
 
-All projects are Licensed under a LGPLv3 License. Permissions beyond the scope of this license may be available at erwin.mueller@deventm.org.
+All projects are Licensed under a Apache 2.0 License. Permissions beyond the scope of this license may be available at erwin.mueller@deventm.org.
