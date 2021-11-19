@@ -16,34 +16,34 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.anrisoftware.globalpom</groupId>
-		<artifactId>globalpom-parent</artifactId>
-		<version>4.6.0</version>
-		<relativePath />
-	</parent>
+    <parent>
+        <groupId>com.anrisoftware.globalpom</groupId>
+        <artifactId>globalpom-parent</artifactId>
+        <version>4.6.0</version>
+        <relativePath />
+    </parent>
 
-	<artifactId>globalpom-izpack-singlejar-assembly</artifactId>
-	<version>4.6.0-SNAPSHOT</version>
-	<name>Installation :: IzPack :: Single Jar Assembly</name>
-	<description>Custom assembly to create a Jar with all dependencies and services properties merged.</description>
-	<inceptionYear>2012</inceptionYear>
-	<url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly</url>
+    <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
+    <version>4.6.0-SNAPSHOT</version>
+    <name>Installation :: IzPack :: Single Jar Assembly</name>
+    <description>Custom assembly to create a Jar with all dependencies and services properties merged.</description>
+    <inceptionYear>2012</inceptionYear>
+    <url>https://anrisoftware.com/projects/projects/globalpom-izpack-singlejar-assembly</url>
 
-	<licenses>
-		<license>
+    <licenses>
+        <license>
             <name>Apache License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
             <distribution>repo</distribution>
-		</license>
-	</licenses>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
+    <developers>
+        <developer>
             <id>EM</id>
             <name>Erwin Müller</name>
             <email>erwin@muellerpublic.de</email>
@@ -54,8 +54,8 @@
                 <role>Owner</role>
                 <role>Developer</role>
             </roles>
-		</developer>
-	</developers>
+        </developer>
+    </developers>
 
     <organization>
         <name>Advanced Natural Research Institute</name>
@@ -87,5 +87,6 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+
 
 </project>

@@ -195,6 +195,7 @@
 									<directory>${project.custom.izpack.resources.dir}</directory>
 									<filtering>true</filtering>
 									<excludes>
+                                        <exclude>**/*.svgz</exclude>
 										<exclude>**/*.jar</exclude>
 										<exclude>**/*.pdf</exclude>
 										<exclude>**/*.ico</exclude>
@@ -205,6 +206,7 @@
 									<directory>${project.custom.izpack.resources.dir}</directory>
 									<filtering>false</filtering>
 									<includes>
+                                        <exclude>**/*.svgz</exclude>
 										<include>**/*.jar</include>
 										<include>**/*.pdf</include>
 										<include>**/*.ico</include>
@@ -285,7 +287,7 @@
 								<configuration>
 									<baseDir>${project.custom.izpack.staging.dir}</baseDir>
 									<installFile>${project.custom.izpack.staging.dir}/install.xml</installFile>
-									<descriptorEncoding>${project.build.sourceEncoding}</descriptorEncoding>
+									<mkdirs>true</mkdirs>
 								</configuration>
 							</execution>
 						</executions>

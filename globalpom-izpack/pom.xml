@@ -178,6 +178,7 @@
 									<directory>${project.custom.izpack.resources.dir}</directory>
 									<filtering>true</filtering>
 									<excludes>
+                                        <exclude>**/*.svgz</exclude>
 										<exclude>**/*.jar</exclude>
 										<exclude>**/*.pdf</exclude>
 										<exclude>**/*.ico</exclude>
@@ -188,6 +189,7 @@
 									<directory>${project.custom.izpack.resources.dir}</directory>
 									<filtering>false</filtering>
 									<includes>
+                                        <exclude>**/*.svgz</exclude>
 										<include>**/*.jar</include>
 										<include>**/*.pdf</include>
 										<include>**/*.ico</include>
@@ -239,10 +241,9 @@
 									<goal>copy-dependencies</goal>
 								</goals>
 								<configuration>
-									<excludeScope>test</excludeScope>
-									<includeScope>compile</includeScope>
+                                    <includeScope>compile</includeScope>
 									<stripVersion>true</stripVersion>
-									<!-- don't want standalone compiler -->
+									<!-- don't want the standalone IzPack compiler -->
 									<excludeGroupIds>org.codehaus.izpack</excludeGroupIds>
 									<outputDirectory>${project.custom.izpack.staging.dir}/lib</outputDirectory>
 								</configuration>
@@ -262,7 +263,7 @@
                                 <configuration>
                                     <baseDir>${project.custom.izpack.staging.dir}</baseDir>
                                     <installFile>${project.custom.izpack.staging.dir}/install.xml</installFile>
-                                    <descriptorEncoding>${project.build.sourceEncoding}</descriptorEncoding>
+                                    <classifier>izpack</classifier>
                                 </configuration>
                             </execution>
                         </executions>
