@@ -136,8 +136,8 @@
 
     <distributionManagement>
         <site>
-            <id>anrisoftware</id>
-            <url>dav:https://anrisoftware.com/javadoc/${project.groupId}/${project.artifactId}</url>
+            <id>site-distribution-id</id>
+            <url>${site.distribution.url}</url>
         </site>
         <repository>
             <id>osssonatype</id>
