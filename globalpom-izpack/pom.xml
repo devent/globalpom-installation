@@ -21,19 +21,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<artifactId>globalpom-parent</artifactId>
-		<groupId>com.anrisoftware.globalpom</groupId>
-        <version>4.6.1</version>
-        <relativePath />
+        <groupId>com.anrisoftware.globalpom</groupId>
+		<artifactId>globalpom-installation</artifactId>
+    	<version>4.6.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>globalpom-izpack</artifactId>
 	<packaging>pom</packaging>
     <name>Installation :: IzPack</name>
-	<version>4.6.0-SNAPSHOT</version>
 	<description>IzPack installer support. Defines a new property compile-izpack that will bundle and create an IzPack installer Jar file.</description>
     <inceptionYear>2011</inceptionYear>
-	<url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack</url>
 
 	<properties>
         <!-- application -->
@@ -103,44 +100,10 @@
         <project.custom.launch4j.unistaller.chdir>..</project.custom.launch4j.unistaller.chdir>
 	</properties>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <id>EM</id>
-            <name>Erwin Müller</name>
-            <email>erwin@muellerpublic.de</email>
-            <timezone>Europe/Berlin</timezone>
-            <organization>Advanced Natural Research Institute</organization>
-            <organizationUrl>https://anrisoftware.com</organizationUrl>
-            <roles>
-                <role>Owner</role>
-                <role>Developer</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <organization>
-        <name>Advanced Natural Research Institute</name>
-        <url>https://anrisoftware.com</url>
-    </organization>
-
     <issueManagement>
         <system>Redmine</system>
         <url>https://anrisoftware.com/projects/projects/globalpom-groovy-izpack</url>
     </issueManagement>
-
-    <scm>
-        <connection>scm:git:git@anrisoftware.com:globalpom-installation.git</connection>
-        <developerConnection>scm:git:git@anrisoftware.com:globalpom-installation.git</developerConnection>
-        <url>https://anrisoftware.com/projects/projects/globalpom-installation/repository</url>
-    </scm>
 
     <distributionManagement>
         <site>

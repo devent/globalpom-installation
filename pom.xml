@@ -21,21 +21,225 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>globalpom-parent</artifactId>
         <groupId>com.anrisoftware.globalpom</groupId>
+        <artifactId>globalpom-parent</artifactId>
         <version>4.6.1</version>
         <relativePath />
     </parent>
 
-    <artifactId>globalpom-izpack-bundle</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>globalpom-installation</artifactId>
+    <version>4.6.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <inceptionYear>2011</inceptionYear>
 
     <modules>
         <module>globalpom-izpack</module>
         <module>globalpom-izpack-singlejar</module>
         <module>globalpom-izpack-singlejar-assembly</module>
     </modules>
+
+    <properties>
+        <!-- javadoc -->
+        <project.custom.home>https://project.anrisoftware.com/projects/globalpom-installation</project.custom.home>
+        <project.custom.license.image.url>https://project.anrisoftware.com/attachments/download/217/apache2.0-small.gif</project.custom.license.image.url>
+        <project.custom.central.url>https://search.maven.org/artifact/${project.groupId}/${project.artifactId}/${project.version}/pom</project.custom.central.url>
+        <project.custom.scm.repo>https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-installation.git</project.custom.scm.repo>
+        <project.custom.scm.github>https://github.com/devent/globalpom-installation</project.custom.scm.github>
+        <project.custom.scm.pub>scm:git:https://gitea.anrisoftware.com/com.anrisoftware.globalpom/globalpom-installation.git</project.custom.scm.pub>
+        <project.custom.scm.dev>scm:git:git@anrisoftware.com:anrisoftware.com/globalpom-installation.git</project.custom.scm.dev>
+        <project.custom.scm.url>${project.custom.home}/repository</project.custom.scm.url>
+        <project.custom.jenkins.url>https://jenkins.anrisoftware.com/job/globalpom-installation-public</project.custom.jenkins.url>
+        <project.custom.jenkins.build.badge.master>${project.custom.jenkins.url}/job/master/badge/icon</project.custom.jenkins.build.badge.master>
+        <project.custom.jenkins.build.link.master>${project.custom.jenkins.url}/job/master</project.custom.jenkins.build.link.master>
+        <project.custom.sonarqube.url>https://sonar.anrisoftware.com/dashboard?id=com.anrisoftware.globalpom%3Aglobalpomutils</project.custom.sonarqube.url>
+        <project.custom.sonarqube.qualitygate.badge>https://sonar.anrisoftware.com/api/badges/gate?key=com.anrisoftware.globalpom%3Aglobalpomutils</project.custom.sonarqube.qualitygate.badge>
+        <project.custom.sonarqube.qualitygate.link>${project.custom.sonarqube.url}</project.custom.sonarqube.qualitygate.link>
+        <!-- versions -->
+        <project.custom.globalpom.version>4.6.1</project.custom.globalpom.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>EM</id>
+            <name>Erwin Müller</name>
+            <organization>Advanced Natural Research Institute</organization>
+            <email>erwin@muellerpublic.de</email>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Advanced Natural Research Institute</name>
+        <url>https://anrisoftware.com/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>Redmine</system>
+        <url>${project.custom.home}</url>
+    </issueManagement>
+
+    <scm>
+        <connection>${project.custom.scm.pub}</connection>
+        <developerConnection>${project.custom.scm.dev}</developerConnection>
+        <url>${project.custom.scm.url}</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>site-distribution-id</id>
+            <url>${site.distribution.url}</url>
+        </site>
+        <repository>
+            <id>public_releases</id>
+            <url>https://maven.anrisoftware.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>public_snapshots</id>
+            <url>https://maven.anrisoftware.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpom-groovytestutils</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.globalpom</groupId>
+                <artifactId>globalpom-log</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.propertiesutils</groupId>
+                <artifactId>propertiesutils-contextproperties</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+
+            <!-- resources -->
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-texts</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-st</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.anrisoftware.resources</groupId>
+                <artifactId>resources-templates</artifactId>
+                <version>${project.custom.globalpom.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>private-repository</id>
+            <distributionManagement>
+                <repository>
+                    <id>private_repo_releases</id>
+                    <url>https://maven.anrisoftware.com/repository/internal/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>private_repo_snapshots</id>
+                    <url>https://maven.anrisoftware.com/repository/snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>osssonatype</id>
+            <distributionManagement>
+                <site>
+                    <id>site-distribution-id</id>
+                    <url>${site.distribution.url}</url>
+                </site>
+                <repository>
+                    <id>osssonatype_releases</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+                <snapshotRepository>
+                    <id>osssonatype_snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>osssonatype_releases</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- Activate profile with -Psign-artifact -->
+            <id>sign-artifact</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- Skip signing -Pno-sign -->
+            <id>no-sign</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
 
