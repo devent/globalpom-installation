@@ -61,7 +61,7 @@ pipeline {
                         groupId = sh script: 'mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout', returnStdout: true
                         artifactId = sh script: 'mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout', returnStdout: true
                         version = sh script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true
-                        isSnapshot = version =~ /.*-snapshot$/
+                        isSnapshot = (version =~ /.*-snapshot$/).matches()
                         echo "${groupId}/${artifactId}:${version} snapshot: ${isSnapshot}"
                     }
                 }
