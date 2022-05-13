@@ -43,19 +43,4 @@
         <url>https://anrisoftware.com/projects/projects/globalpom-installation/repository</url>
     </scm>
 
-    <distributionManagement>
-        <site>
-            <id>site-distribution-id</id>
-            <url>${site.distribution.url}</url>
-        </site>
-        <repository>
-            <id>osssonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-        <snapshotRepository>
-            <id>osssonatype_snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
 </project>

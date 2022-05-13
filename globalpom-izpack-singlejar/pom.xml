@@ -134,21 +134,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <site>
-            <id>site-distribution-id</id>
-            <url>${site.distribution.url}</url>
-        </site>
-        <repository>
-            <id>osssonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-        <snapshotRepository>
-            <id>osssonatype_snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <build>
 
         <plugins>
