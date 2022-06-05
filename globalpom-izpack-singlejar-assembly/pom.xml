@@ -23,7 +23,7 @@
     <parent>
         <groupId>com.anrisoftware.globalpom</groupId>
 		<artifactId>globalpom-installation</artifactId>
-    	<version>4.6.2-SNAPSHOT</version>
+    	<version>4.6.2</version>
     </parent>
 
     <artifactId>globalpom-izpack-singlejar-assembly</artifactId>
