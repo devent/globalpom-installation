@@ -1,6 +1,6 @@
 <!--
 
-    Copyright 2011-2021 Erwin Müller <erwin.mueller@anrisoftware.com>
+    Copyright 2011-2022 Erwin Müller <erwin.mueller@anrisoftware.com>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@
 	<parent>
         <groupId>com.anrisoftware.globalpom</groupId>
 		<artifactId>globalpom-installation</artifactId>
-    	<version>4.6.1</version>
+    	<version>4.6.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>globalpom-izpack</artifactId>
@@ -34,70 +34,70 @@
 
 	<properties>
         <!-- application -->
-		<project.custom.app.name>${project.name}</project.custom.app.name>
-		<project.custom.app.description></project.custom.app.description>
-        <project.custom.app.path>${project.name}</project.custom.app.path>
-		<project.custom.app.version>${project.version}</project.custom.app.version>
-        <project.custom.app.author.name />
-        <project.custom.app.author.email />
-        <project.custom.app.mainclass />
-        <project.custom.app.organization.url>http://www.anr-institute.com</project.custom.app.organization.url>
-		<project.custom.app.copyright>${project.custom.year} ${project.custom.author.name}</project.custom.app.copyright>
-        <project.custom.app.icon.unix>etc/application.png</project.custom.app.icon.unix>
-        <project.custom.app.icon.windows>etc/application.ico</project.custom.app.icon.windows>
-        <project.custom.app.linuxbin>run.sh</project.custom.app.linuxbin>
-        <project.custom.app.linuxdebugbin>debug-run.sh</project.custom.app.linuxdebugbin>
-        <project.custom.app.windowsbin>${project.custom.app.windowslauncher}</project.custom.app.windowsbin>
-        <project.custom.app.windowsdebugbin>${project.custom.app.windowsdebugscript}</project.custom.app.windowsdebugbin>
-        <project.custom.app.windowsstartscript>run.bat</project.custom.app.windowsstartscript>
-        <project.custom.app.windowsdebugscript>debug-run.bat</project.custom.app.windowsdebugscript>
-        <project.custom.app.windowslauncher>${project.custom.launch4j.applauncher.launcherfilename}.exe</project.custom.app.windowslauncher>
+		<globalpom.custom.app.name>${project.name}</globalpom.custom.app.name>
+		<globalpom.custom.app.description></globalpom.custom.app.description>
+        <globalpom.custom.app.path>${project.name}</globalpom.custom.app.path>
+		<globalpom.custom.app.version>${project.version}</globalpom.custom.app.version>
+        <globalpom.custom.app.author.name />
+        <globalpom.custom.app.author.email />
+        <globalpom.custom.app.mainclass />
+        <globalpom.custom.app.organization.url>http://www.anr-institute.com</globalpom.custom.app.organization.url>
+		<globalpom.custom.app.copyright>${globalpom.custom.year} ${globalpom.custom.author.name}</globalpom.custom.app.copyright>
+        <globalpom.custom.app.icon.unix>etc/application.png</globalpom.custom.app.icon.unix>
+        <globalpom.custom.app.icon.windows>etc/application.ico</globalpom.custom.app.icon.windows>
+        <globalpom.custom.app.linuxbin>run.sh</globalpom.custom.app.linuxbin>
+        <globalpom.custom.app.linuxdebugbin>debug-run.sh</globalpom.custom.app.linuxdebugbin>
+        <globalpom.custom.app.windowsbin>${globalpom.custom.app.windowslauncher}</globalpom.custom.app.windowsbin>
+        <globalpom.custom.app.windowsdebugbin>${globalpom.custom.app.windowsdebugscript}</globalpom.custom.app.windowsdebugbin>
+        <globalpom.custom.app.windowsstartscript>run.bat</globalpom.custom.app.windowsstartscript>
+        <globalpom.custom.app.windowsdebugscript>debug-run.bat</globalpom.custom.app.windowsdebugscript>
+        <globalpom.custom.app.windowslauncher>${globalpom.custom.launch4j.applauncher.launcherfilename}.exe</globalpom.custom.app.windowslauncher>
         <!-- izpack installer -->
-        <project.custom.izpack.version>5.1.3</project.custom.izpack.version>
-        <project.custom.izpack.staging.dir>${project.build.directory}/staging</project.custom.izpack.staging.dir>
-        <project.custom.izpack.resources.dir>src/main/izpack</project.custom.izpack.resources.dir>
-		<project.custom.izpack.gui.resizeable>yes</project.custom.izpack.gui.resizeable>
-		<project.custom.izpack.gui.width>536</project.custom.izpack.gui.width>
-		<project.custom.izpack.gui.height>428</project.custom.izpack.gui.height>
-		<project.custom.izpack.readme>doc/en/readme.txt</project.custom.izpack.readme>
-        <project.custom.jre.minversion>${project.custom.source.source}.0</project.custom.jre.minversion>
+        <globalpom.custom.izpack.version>5.1.3</globalpom.custom.izpack.version>
+        <globalpom.custom.izpack.staging.dir>${project.build.directory}/staging</globalpom.custom.izpack.staging.dir>
+        <globalpom.custom.izpack.resources.dir>src/main/izpack</globalpom.custom.izpack.resources.dir>
+		<globalpom.custom.izpack.gui.resizeable>yes</globalpom.custom.izpack.gui.resizeable>
+		<globalpom.custom.izpack.gui.width>536</globalpom.custom.izpack.gui.width>
+		<globalpom.custom.izpack.gui.height>428</globalpom.custom.izpack.gui.height>
+		<globalpom.custom.izpack.readme>doc/en/readme.txt</globalpom.custom.izpack.readme>
+        <globalpom.custom.jre.minversion>${globalpom.custom.source.source}.0</globalpom.custom.jre.minversion>
         <!-- launch4j installer -->
-        <project.custom.launch4j.izpack.mainclass>com.izforge.izpack.installer.bootstrap.Installer</project.custom.launch4j.izpack.mainclass>
-        <project.custom.launch4j.izpack.preclasspath></project.custom.launch4j.izpack.preclasspath>
-        <project.custom.launch4j.install.jarfilename>${project.artifactId}-${project.version}</project.custom.launch4j.install.jarfilename>
-        <project.custom.launch4j.install.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.install.icon>
-        <project.custom.launch4j.install.fileversion>1.0.0.0</project.custom.launch4j.install.fileversion>
-        <project.custom.launch4j.install.txtfileversion>1.0.0.0</project.custom.launch4j.install.txtfileversion>
-        <project.custom.launch4j.install.filedescription>${project.custom.app.description}</project.custom.launch4j.install.filedescription>
-        <project.custom.launch4j.install.copyright>${project.custom.app.copyright}</project.custom.launch4j.install.copyright>
-        <project.custom.launch4j.install.productversion>1.0.0.0</project.custom.launch4j.install.productversion>
-        <project.custom.launch4j.install.txtproductversion>${project.custom.app.version}</project.custom.launch4j.install.txtproductversion>
-        <project.custom.launch4j.install.productname>${project.custom.app.name}</project.custom.launch4j.install.productname>
-        <project.custom.launch4j.install.originalfilename>${project.custom.launch4j.install.jarfilename}.exe</project.custom.launch4j.install.originalfilename>
-        <project.custom.launch4j.install.internalname>${project.custom.launch4j.install.jarfilename}.jar</project.custom.launch4j.install.internalname>
+        <globalpom.custom.launch4j.izpack.mainclass>com.izforge.izpack.installer.bootstrap.Installer</globalpom.custom.launch4j.izpack.mainclass>
+        <globalpom.custom.launch4j.izpack.preclasspath></globalpom.custom.launch4j.izpack.preclasspath>
+        <globalpom.custom.launch4j.install.jarfilename>${project.artifactId}-${project.version}</globalpom.custom.launch4j.install.jarfilename>
+        <globalpom.custom.launch4j.install.icon>src/main/izpack/${globalpom.custom.app.icon.windows}</globalpom.custom.launch4j.install.icon>
+        <globalpom.custom.launch4j.install.fileversion>1.0.0.0</globalpom.custom.launch4j.install.fileversion>
+        <globalpom.custom.launch4j.install.txtfileversion>1.0.0.0</globalpom.custom.launch4j.install.txtfileversion>
+        <globalpom.custom.launch4j.install.filedescription>${globalpom.custom.app.description}</globalpom.custom.launch4j.install.filedescription>
+        <globalpom.custom.launch4j.install.copyright>${globalpom.custom.app.copyright}</globalpom.custom.launch4j.install.copyright>
+        <globalpom.custom.launch4j.install.productversion>1.0.0.0</globalpom.custom.launch4j.install.productversion>
+        <globalpom.custom.launch4j.install.txtproductversion>${globalpom.custom.app.version}</globalpom.custom.launch4j.install.txtproductversion>
+        <globalpom.custom.launch4j.install.productname>${globalpom.custom.app.name}</globalpom.custom.launch4j.install.productname>
+        <globalpom.custom.launch4j.install.originalfilename>${globalpom.custom.launch4j.install.jarfilename}.exe</globalpom.custom.launch4j.install.originalfilename>
+        <globalpom.custom.launch4j.install.internalname>${globalpom.custom.launch4j.install.jarfilename}.jar</globalpom.custom.launch4j.install.internalname>
         <!-- launch4j application launcher -->
-        <project.custom.launch4j.applauncher.type>gui</project.custom.launch4j.applauncher.type>
-        <project.custom.launch4j.applauncher.icon>src/main/izpack/${project.custom.app.icon.windows}</project.custom.launch4j.applauncher.icon>
-        <project.custom.launch4j.applauncher.launcherfilename>${project.artifactId}</project.custom.launch4j.applauncher.launcherfilename>
-        <project.custom.launch4j.applauncher.jarfilename></project.custom.launch4j.applauncher.jarfilename>
-        <project.custom.launch4j.applauncher.commandline></project.custom.launch4j.applauncher.commandline>
-        <project.custom.launch4j.applauncher.jreopt>-Dlogback.configurationFile=etc/logback.xml</project.custom.launch4j.applauncher.jreopt>
-        <project.custom.launch4j.applauncher.chdir>../..</project.custom.launch4j.applauncher.chdir>
-        <project.custom.launch4j.applauncher.stayalive>false</project.custom.launch4j.applauncher.stayalive>
-        <project.custom.launch4j.applauncher.fileversion>1.0.0.0</project.custom.launch4j.applauncher.fileversion>
-        <project.custom.launch4j.applauncher.txtfileversion>1.0.0.0</project.custom.launch4j.applauncher.txtfileversion>
-        <project.custom.launch4j.applauncher.filedescription>${project.custom.app.description}</project.custom.launch4j.applauncher.filedescription>
-        <project.custom.launch4j.applauncher.copyright>${project.custom.app.copyright}</project.custom.launch4j.applauncher.copyright>
-        <project.custom.launch4j.applauncher.productversion>1.0.0.0</project.custom.launch4j.applauncher.productversion>
-        <project.custom.launch4j.applauncher.txtproductversion>${project.custom.app.version}</project.custom.launch4j.applauncher.txtproductversion>
-        <project.custom.launch4j.applauncher.productname>${project.custom.app.name}</project.custom.launch4j.applauncher.productname>
-        <project.custom.launch4j.applauncher.originalfilename>${project.custom.launch4j.applauncher.jarfilename}.exe</project.custom.launch4j.applauncher.originalfilename>
-        <project.custom.launch4j.applauncher.internalname>${project.custom.launch4j.applauncher.jarfilename}.jar</project.custom.launch4j.applauncher.internalname>
+        <globalpom.custom.launch4j.applauncher.type>gui</globalpom.custom.launch4j.applauncher.type>
+        <globalpom.custom.launch4j.applauncher.icon>src/main/izpack/${globalpom.custom.app.icon.windows}</globalpom.custom.launch4j.applauncher.icon>
+        <globalpom.custom.launch4j.applauncher.launcherfilename>${project.artifactId}</globalpom.custom.launch4j.applauncher.launcherfilename>
+        <globalpom.custom.launch4j.applauncher.jarfilename></globalpom.custom.launch4j.applauncher.jarfilename>
+        <globalpom.custom.launch4j.applauncher.commandline></globalpom.custom.launch4j.applauncher.commandline>
+        <globalpom.custom.launch4j.applauncher.jreopt>-Dlogback.configurationFile=etc/logback.xml</globalpom.custom.launch4j.applauncher.jreopt>
+        <globalpom.custom.launch4j.applauncher.chdir>../..</globalpom.custom.launch4j.applauncher.chdir>
+        <globalpom.custom.launch4j.applauncher.stayalive>false</globalpom.custom.launch4j.applauncher.stayalive>
+        <globalpom.custom.launch4j.applauncher.fileversion>1.0.0.0</globalpom.custom.launch4j.applauncher.fileversion>
+        <globalpom.custom.launch4j.applauncher.txtfileversion>1.0.0.0</globalpom.custom.launch4j.applauncher.txtfileversion>
+        <globalpom.custom.launch4j.applauncher.filedescription>${globalpom.custom.app.description}</globalpom.custom.launch4j.applauncher.filedescription>
+        <globalpom.custom.launch4j.applauncher.copyright>${globalpom.custom.app.copyright}</globalpom.custom.launch4j.applauncher.copyright>
+        <globalpom.custom.launch4j.applauncher.productversion>1.0.0.0</globalpom.custom.launch4j.applauncher.productversion>
+        <globalpom.custom.launch4j.applauncher.txtproductversion>${globalpom.custom.app.version}</globalpom.custom.launch4j.applauncher.txtproductversion>
+        <globalpom.custom.launch4j.applauncher.productname>${globalpom.custom.app.name}</globalpom.custom.launch4j.applauncher.productname>
+        <globalpom.custom.launch4j.applauncher.originalfilename>${globalpom.custom.launch4j.applauncher.jarfilename}.exe</globalpom.custom.launch4j.applauncher.originalfilename>
+        <globalpom.custom.launch4j.applauncher.internalname>${globalpom.custom.launch4j.applauncher.jarfilename}.jar</globalpom.custom.launch4j.applauncher.internalname>
         <!-- launch4j uninstall -->
-        <project.custom.launch4j.unistaller.filename>uninstaller</project.custom.launch4j.unistaller.filename>
-        <project.custom.launch4j.unistaller.mainclass>com.izforge.izpack.uninstaller.Uninstaller</project.custom.launch4j.unistaller.mainclass>
-        <project.custom.launch4j.unistaller.jarfile>Uninstaller/uninstaller.jar</project.custom.launch4j.unistaller.jarfile>
-        <project.custom.launch4j.unistaller.chdir>..</project.custom.launch4j.unistaller.chdir>
+        <globalpom.custom.launch4j.unistaller.filename>uninstaller</globalpom.custom.launch4j.unistaller.filename>
+        <globalpom.custom.launch4j.unistaller.mainclass>com.izforge.izpack.uninstaller.Uninstaller</globalpom.custom.launch4j.unistaller.mainclass>
+        <globalpom.custom.launch4j.unistaller.jarfile>Uninstaller/uninstaller.jar</globalpom.custom.launch4j.unistaller.jarfile>
+        <globalpom.custom.launch4j.unistaller.chdir>..</globalpom.custom.launch4j.unistaller.chdir>
 	</properties>
 
     <issueManagement>
@@ -120,11 +120,11 @@
 						</goals>
 						<configuration>
 							<encoding>${project.build.sourceEncoding}</encoding>
-							<outputDirectory>${project.custom.izpack.staging.dir}</outputDirectory>
+							<outputDirectory>${globalpom.custom.izpack.staging.dir}</outputDirectory>
 							<escapeString>\</escapeString>
 							<resources>
 								<resource>
-									<directory>${project.custom.izpack.resources.dir}</directory>
+									<directory>${globalpom.custom.izpack.resources.dir}</directory>
 									<filtering>true</filtering>
 									<excludes>
                                         <exclude>**/*.svgz</exclude>
@@ -135,7 +135,7 @@
 									</excludes>
 								</resource>
 								<resource>
-									<directory>${project.custom.izpack.resources.dir}</directory>
+									<directory>${globalpom.custom.izpack.resources.dir}</directory>
 									<filtering>false</filtering>
 									<includes>
                                         <exclude>**/*.svgz</exclude>
@@ -159,7 +159,7 @@
 					<!-- Maven plugin for IzPack -->
 					<groupId>org.codehaus.izpack</groupId>
 					<artifactId>izpack-maven-plugin</artifactId>
-					<version>${project.custom.izpack.version}</version>
+					<version>${globalpom.custom.izpack.version}</version>
 				</plugin>
                 <plugin>
                     <!-- Maven plugin for launch4j -->
@@ -194,7 +194,7 @@
 									<stripVersion>true</stripVersion>
 									<!-- don't want the standalone IzPack compiler -->
 									<excludeGroupIds>org.codehaus.izpack</excludeGroupIds>
-									<outputDirectory>${project.custom.izpack.staging.dir}/lib</outputDirectory>
+									<outputDirectory>${globalpom.custom.izpack.staging.dir}/lib</outputDirectory>
 								</configuration>
 							</execution>
 						</executions>
@@ -210,8 +210,8 @@
                                     <goal>izpack</goal>
                                 </goals>
                                 <configuration>
-                                    <baseDir>${project.custom.izpack.staging.dir}</baseDir>
-                                    <installFile>${project.custom.izpack.staging.dir}/install.xml</installFile>
+                                    <baseDir>${globalpom.custom.izpack.staging.dir}</baseDir>
+                                    <installFile>${globalpom.custom.izpack.staging.dir}/install.xml</installFile>
                                     <classifier>izpack</classifier>
                                 </configuration>
                             </execution>
@@ -230,69 +230,69 @@
 								<configuration>
 									<rules>
 										<requireProperty>
-											<property>project.custom.app.mainclass</property>
+											<property>globalpom.custom.app.mainclass</property>
 											<regex>.+</regex>
-											<regexMessage>Property project.custom.app.mainclass must be set. The property cannot be empty.</regexMessage>
+											<regexMessage>Property globalpom.custom.app.mainclass must be set. The property cannot be empty.</regexMessage>
 										</requireProperty>
 										<requireProperty>
-											<property>project.custom.app.author.name</property>
+											<property>globalpom.custom.app.author.name</property>
 											<regex>.+</regex>
-											<regexMessage>Property project.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
+											<regexMessage>Property globalpom.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
 										</requireProperty>
 										<requireProperty>
-											<property>project.custom.app.author.email</property>
+											<property>globalpom.custom.app.author.email</property>
 											<regex>.+</regex>
-											<regexMessage>Property project.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
+											<regexMessage>Property globalpom.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
 										</requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.organization.url</property>
+                                            <property>globalpom.custom.app.organization.url</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.organization.url must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.organization.url must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.name</property>
+                                            <property>globalpom.custom.app.name</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.name must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.name must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.linuxbin</property>
+                                            <property>globalpom.custom.app.linuxbin</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.linuxbin must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.linuxbin must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.linuxdebugbin</property>
+                                            <property>globalpom.custom.app.linuxdebugbin</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.linuxdebugbin must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.linuxdebugbin must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.windowsbin</property>
+                                            <property>globalpom.custom.app.windowsbin</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.windowsbin must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.windowsbin must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.windowsdebugbin</property>
+                                            <property>globalpom.custom.app.windowsdebugbin</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.windowsdebugbin must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.windowsdebugbin must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.izpack.gui.resizeable</property>
+                                            <property>globalpom.custom.izpack.gui.resizeable</property>
                                             <regex>(yes|no)</regex>
-                                            <regexMessage>Property project.custom.izpack.gui.resizeable must be set to yes|no.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.izpack.gui.resizeable must be set to yes|no.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.izpack.gui.resizeable</property>
+                                            <property>globalpom.custom.izpack.gui.resizeable</property>
                                             <regex>(yes|no)</regex>
-                                            <regexMessage>Property project.custom.izpack.gui.resizeable must be set to yes|no.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.izpack.gui.resizeable must be set to yes|no.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.izpack.gui.width</property>
+                                            <property>globalpom.custom.izpack.gui.width</property>
                                             <regex>\d+</regex>
-                                            <regexMessage>Property project.custom.izpack.gui.width must be set to an valid size.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.izpack.gui.width must be set to an valid size.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.izpack.gui.height</property>
+                                            <property>globalpom.custom.izpack.gui.height</property>
                                             <regex>\d+</regex>
-                                            <regexMessage>Property project.custom.izpack.gui.height must be set to an valid size.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.izpack.gui.height must be set to an valid size.</regexMessage>
                                         </requireProperty>
 									</rules>
 									<fail>true</fail>
@@ -321,28 +321,28 @@
                                 </goals>
                                 <configuration>
                                     <headerType>gui</headerType>
-                                    <outfile>target/${project.custom.launch4j.install.jarfilename}.exe</outfile>
-                                    <jar>target/${project.custom.launch4j.install.jarfilename}.jar</jar>
-                                    <errTitle>${project.custom.launch4j.install.jarfilename}</errTitle>
+                                    <outfile>target/${globalpom.custom.launch4j.install.jarfilename}.exe</outfile>
+                                    <jar>target/${globalpom.custom.launch4j.install.jarfilename}.jar</jar>
+                                    <errTitle>${globalpom.custom.launch4j.install.jarfilename}</errTitle>
                                     <classPath>
-                                        <mainClass>${project.custom.launch4j.izpack.mainclass}</mainClass>
+                                        <mainClass>${globalpom.custom.launch4j.izpack.mainclass}</mainClass>
                                         <addDependencies>false</addDependencies>
-                                        <preCp>${project.custom.launch4j.izpack.preclasspath}</preCp>
+                                        <preCp>${globalpom.custom.launch4j.izpack.preclasspath}</preCp>
                                     </classPath>
-                                    <icon>${project.custom.launch4j.install.icon}</icon>
+                                    <icon>${globalpom.custom.launch4j.install.icon}</icon>
                                     <jre>
-                                        <minVersion>${project.custom.jre.minversion}</minVersion>
+                                        <minVersion>${globalpom.custom.jre.minversion}</minVersion>
                                     </jre>
                                     <versionInfo>
-                                        <fileVersion>${project.custom.launch4j.install.fileversion}</fileVersion>
-                                        <txtFileVersion>${project.custom.launch4j.install.txtfileversion}</txtFileVersion>
-                                        <fileDescription>${project.custom.launch4j.install.filedescription}</fileDescription>
-                                        <copyright>${project.custom.launch4j.install.copyright}</copyright>
-                                        <productVersion>${project.custom.launch4j.install.productversion}</productVersion>
-                                        <txtProductVersion>${project.custom.launch4j.install.txtproductversion}</txtProductVersion>
-                                        <productName>${project.custom.launch4j.install.productname}</productName>
-                                        <internalName>${project.custom.launch4j.install.internalname}</internalName>
-                                        <originalFilename>${project.custom.launch4j.install.originalfilename}</originalFilename>
+                                        <fileVersion>${globalpom.custom.launch4j.install.fileversion}</fileVersion>
+                                        <txtFileVersion>${globalpom.custom.launch4j.install.txtfileversion}</txtFileVersion>
+                                        <fileDescription>${globalpom.custom.launch4j.install.filedescription}</fileDescription>
+                                        <copyright>${globalpom.custom.launch4j.install.copyright}</copyright>
+                                        <productVersion>${globalpom.custom.launch4j.install.productversion}</productVersion>
+                                        <txtProductVersion>${globalpom.custom.launch4j.install.txtproductversion}</txtProductVersion>
+                                        <productName>${globalpom.custom.launch4j.install.productname}</productName>
+                                        <internalName>${globalpom.custom.launch4j.install.internalname}</internalName>
+                                        <originalFilename>${globalpom.custom.launch4j.install.originalfilename}</originalFilename>
                                     </versionInfo>
                                 </configuration>
                             </execution>
@@ -361,45 +361,45 @@
                                 <configuration>
                                     <rules>
                                         <requireProperty>
-                                            <property>project.custom.app.mainclass</property>
+                                            <property>globalpom.custom.app.mainclass</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.mainclass must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.mainclass must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.author.name</property>
+                                            <property>globalpom.custom.app.author.name</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.author.name must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.author.name must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.author.email</property>
+                                            <property>globalpom.custom.app.author.email</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.author.email must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.author.email must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.install.filedescription</property>
+                                            <property>globalpom.custom.launch4j.install.filedescription</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.install.filedescription must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.install.filedescription must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.install.originalfilename</property>
+                                            <property>globalpom.custom.launch4j.install.originalfilename</property>
                                             <regex>.{1,50}$</regex>
-                                            <regexMessage>Property project.custom.launch4j.install.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.install.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.install.internalname</property>
+                                            <property>globalpom.custom.launch4j.install.internalname</property>
                                             <regex>.{1,50}$</regex>
-                                            <regexMessage>Property project.custom.launch4j.install.internalname must be set. It cannot exceed 50 characters.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.install.internalname must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.izpack.mainclass</property>
+                                            <property>globalpom.custom.launch4j.izpack.mainclass</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.izpack.mainclass must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.izpack.mainclass must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireFilesExist>
                                             <files>
-                                                <file>target/${project.custom.launch4j.install.jarfilename}.jar</file>
+                                                <file>target/${globalpom.custom.launch4j.install.jarfilename}.jar</file>
                                             </files>
-                                            <message>File target/${project.custom.launch4j.install.jarfilename}.jar must exists. Run profile compile-izpack first.</message>
+                                            <message>File target/${globalpom.custom.launch4j.install.jarfilename}.jar must exists. Run profile compile-izpack first.</message>
                                         </requireFilesExist>
                                     </rules>
                                     <fail>true</fail>
@@ -427,36 +427,36 @@
                                     <goal>launch4j</goal>
                                 </goals>
                                 <configuration>
-                                    <headerType>${project.custom.launch4j.applauncher.type}</headerType>
-                                    <outfile>target/${project.custom.launch4j.applauncher.launcherfilename}.exe</outfile>
-                                    <jar>lib/${project.custom.launch4j.applauncher.jarfilename}.jar</jar>
-                                    <errTitle>${project.custom.launch4j.applauncher.jarfilename}</errTitle>
+                                    <headerType>${globalpom.custom.launch4j.applauncher.type}</headerType>
+                                    <outfile>target/${globalpom.custom.launch4j.applauncher.launcherfilename}.exe</outfile>
+                                    <jar>lib/${globalpom.custom.launch4j.applauncher.jarfilename}.jar</jar>
+                                    <errTitle>${globalpom.custom.launch4j.applauncher.jarfilename}</errTitle>
                                     <dontWrapJar>true</dontWrapJar>
-                                    <cmdLine>${project.custom.launch4j.applauncher.commandline}</cmdLine>
-                                    <chdir>${project.custom.launch4j.applauncher.chdir}</chdir>
-                                    <stayAlive>${project.custom.launch4j.applauncher.stayalive}</stayAlive>
+                                    <cmdLine>${globalpom.custom.launch4j.applauncher.commandline}</cmdLine>
+                                    <chdir>${globalpom.custom.launch4j.applauncher.chdir}</chdir>
+                                    <stayAlive>${globalpom.custom.launch4j.applauncher.stayalive}</stayAlive>
                                     <classPath>
-                                        <mainClass>${project.custom.app.mainclass}</mainClass>
+                                        <mainClass>${globalpom.custom.app.mainclass}</mainClass>
                                         <addDependencies>false</addDependencies>
                                         <preCp>lib/*.jar</preCp>
                                     </classPath>
-                                    <icon>${project.custom.launch4j.applauncher.icon}</icon>
+                                    <icon>${globalpom.custom.launch4j.applauncher.icon}</icon>
                                     <jre>
-                                        <minVersion>${project.custom.jre.minversion}</minVersion>
+                                        <minVersion>${globalpom.custom.jre.minversion}</minVersion>
                                         <opts>
-                                            <opt>${project.custom.launch4j.applauncher.jreopt}</opt>
+                                            <opt>${globalpom.custom.launch4j.applauncher.jreopt}</opt>
                                         </opts>
                                     </jre>
                                     <versionInfo>
-                                        <fileVersion>${project.custom.launch4j.applauncher.fileversion}</fileVersion>
-                                        <txtFileVersion>${project.custom.launch4j.applauncher.txtfileversion}</txtFileVersion>
-                                        <fileDescription>${project.custom.launch4j.applauncher.filedescription}</fileDescription>
-                                        <copyright>${project.custom.launch4j.applauncher.copyright}</copyright>
-                                        <productVersion>${project.custom.launch4j.applauncher.productversion}</productVersion>
-                                        <txtProductVersion>${project.custom.launch4j.applauncher.txtproductversion}</txtProductVersion>
-                                        <productName>${project.custom.launch4j.applauncher.productname}</productName>
-                                        <internalName>${project.custom.launch4j.applauncher.internalname}</internalName>
-                                        <originalFilename>${project.custom.launch4j.applauncher.originalfilename}</originalFilename>
+                                        <fileVersion>${globalpom.custom.launch4j.applauncher.fileversion}</fileVersion>
+                                        <txtFileVersion>${globalpom.custom.launch4j.applauncher.txtfileversion}</txtFileVersion>
+                                        <fileDescription>${globalpom.custom.launch4j.applauncher.filedescription}</fileDescription>
+                                        <copyright>${globalpom.custom.launch4j.applauncher.copyright}</copyright>
+                                        <productVersion>${globalpom.custom.launch4j.applauncher.productversion}</productVersion>
+                                        <txtProductVersion>${globalpom.custom.launch4j.applauncher.txtproductversion}</txtProductVersion>
+                                        <productName>${globalpom.custom.launch4j.applauncher.productname}</productName>
+                                        <internalName>${globalpom.custom.launch4j.applauncher.internalname}</internalName>
+                                        <originalFilename>${globalpom.custom.launch4j.applauncher.originalfilename}</originalFilename>
                                     </versionInfo>
                                 </configuration>
                             </execution>
@@ -475,49 +475,49 @@
                                 <configuration>
                                     <rules>
                                         <requireProperty>
-                                            <property>project.custom.app.mainclass</property>
+                                            <property>globalpom.custom.app.mainclass</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.mainclass must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.mainclass must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.author.name</property>
+                                            <property>globalpom.custom.app.author.name</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.author.email</property>
+                                            <property>globalpom.custom.app.author.email</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.type</property>
+                                            <property>globalpom.custom.launch4j.applauncher.type</property>
                                             <regex>gui|console</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.type must be set. Property must be either "gui" or "console".</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.type must be set. Property must be either "gui" or "console".</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.filedescription</property>
+                                            <property>globalpom.custom.launch4j.applauncher.filedescription</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.filedescription must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.filedescription must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.originalfilename</property>
+                                            <property>globalpom.custom.launch4j.applauncher.originalfilename</property>
                                             <regex>.{1,50}$</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.originalfilename must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.internalname</property>
+                                            <property>globalpom.custom.launch4j.applauncher.internalname</property>
                                             <regex>.{1,50}$</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.internalname must be set. It cannot exceed 50 characters.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.internalname must be set. It cannot exceed 50 characters.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.launcherfilename</property>
+                                            <property>globalpom.custom.launch4j.applauncher.launcherfilename</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.launcherfilename must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.launcherfilename must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.jarfilename</property>
+                                            <property>globalpom.custom.launch4j.applauncher.jarfilename</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.jarfilename must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.jarfilename must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                     </rules>
                                     <fail>true</fail>
@@ -546,29 +546,29 @@
                                 </goals>
                                 <configuration>
                                     <headerType>gui</headerType>
-                                    <outfile>target/${project.custom.launch4j.unistaller.filename}.exe</outfile>
-                                    <jar>${project.custom.launch4j.unistaller.jarfile}</jar>
-                                    <errTitle>${project.custom.launch4j.unistaller.jarfile}</errTitle>
+                                    <outfile>target/${globalpom.custom.launch4j.unistaller.filename}.exe</outfile>
+                                    <jar>${globalpom.custom.launch4j.unistaller.jarfile}</jar>
+                                    <errTitle>${globalpom.custom.launch4j.unistaller.jarfile}</errTitle>
                                     <dontWrapJar>true</dontWrapJar>
-                                    <chdir>${project.custom.launch4j.unistaller.chdir}</chdir>
+                                    <chdir>${globalpom.custom.launch4j.unistaller.chdir}</chdir>
                                     <classPath>
-                                        <mainClass>${project.custom.launch4j.unistaller.mainclass}</mainClass>
+                                        <mainClass>${globalpom.custom.launch4j.unistaller.mainclass}</mainClass>
                                         <addDependencies>false</addDependencies>
                                     </classPath>
-                                    <icon>${project.custom.launch4j.applauncher.icon}</icon>
+                                    <icon>${globalpom.custom.launch4j.applauncher.icon}</icon>
                                     <jre>
-                                        <minVersion>${project.custom.jre.minversion}</minVersion>
+                                        <minVersion>${globalpom.custom.jre.minversion}</minVersion>
                                     </jre>
                                     <versionInfo>
-                                        <fileVersion>${project.custom.launch4j.applauncher.fileversion}</fileVersion>
-                                        <txtFileVersion>${project.custom.launch4j.applauncher.txtfileversion}</txtFileVersion>
-                                        <fileDescription>${project.custom.launch4j.applauncher.filedescription}</fileDescription>
-                                        <copyright>${project.custom.launch4j.applauncher.copyright}</copyright>
-                                        <productVersion>${project.custom.launch4j.applauncher.productversion}</productVersion>
-                                        <txtProductVersion>${project.custom.launch4j.applauncher.txtproductversion}</txtProductVersion>
-                                        <productName>${project.custom.launch4j.applauncher.productname}</productName>
-                                        <internalName>${project.custom.launch4j.unistaller.jarfile}</internalName>
-                                        <originalFilename>${project.custom.launch4j.unistaller.filename}.exe</originalFilename>
+                                        <fileVersion>${globalpom.custom.launch4j.applauncher.fileversion}</fileVersion>
+                                        <txtFileVersion>${globalpom.custom.launch4j.applauncher.txtfileversion}</txtFileVersion>
+                                        <fileDescription>${globalpom.custom.launch4j.applauncher.filedescription}</fileDescription>
+                                        <copyright>${globalpom.custom.launch4j.applauncher.copyright}</copyright>
+                                        <productVersion>${globalpom.custom.launch4j.applauncher.productversion}</productVersion>
+                                        <txtProductVersion>${globalpom.custom.launch4j.applauncher.txtproductversion}</txtProductVersion>
+                                        <productName>${globalpom.custom.launch4j.applauncher.productname}</productName>
+                                        <internalName>${globalpom.custom.launch4j.unistaller.jarfile}</internalName>
+                                        <originalFilename>${globalpom.custom.launch4j.unistaller.filename}.exe</originalFilename>
                                     </versionInfo>
                                 </configuration>
                             </execution>
@@ -587,34 +587,34 @@
                                 <configuration>
                                     <rules>
                                         <requireProperty>
-                                            <property>project.custom.app.author.name</property>
+                                            <property>globalpom.custom.app.author.name</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.author.name must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.app.author.email</property>
+                                            <property>globalpom.custom.app.author.email</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.app.author.email must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.unistaller.mainclass</property>
+                                            <property>globalpom.custom.launch4j.unistaller.mainclass</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.unsintaller.mainclass must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.unsintaller.mainclass must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.unistaller.filename</property>
+                                            <property>globalpom.custom.launch4j.unistaller.filename</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.unistaller.filename must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.unistaller.filename must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.unistaller.jarfile</property>
+                                            <property>globalpom.custom.launch4j.unistaller.jarfile</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.unistaller.jarfile must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.unistaller.jarfile must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                         <requireProperty>
-                                            <property>project.custom.launch4j.applauncher.filedescription</property>
+                                            <property>globalpom.custom.launch4j.applauncher.filedescription</property>
                                             <regex>.+</regex>
-                                            <regexMessage>Property project.custom.launch4j.applauncher.filedescription must be set. The property cannot be empty.</regexMessage>
+                                            <regexMessage>Property globalpom.custom.launch4j.applauncher.filedescription must be set. The property cannot be empty.</regexMessage>
                                         </requireProperty>
                                     </rules>
                                     <fail>true</fail>
