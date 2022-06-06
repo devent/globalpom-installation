@@ -1,5 +1,5 @@
 ~~
-~~ Copyright 2011-2021 Erwin Müller <erwin.mueller@anrisoftware.com>
+~~ Copyright 2011-2022 Erwin Müller <erwin.mueller@anrisoftware.com>
 ~~
 ~~ Licensed under the Apache License, Version 2.0 (the "License");
 ~~ you may not use this file except in compliance with the License.
@@ -46,183 +46,183 @@ the <<<pom.xml>>> file;
 ** Application Properties
 
 *-----*------*
- <<<project.custom.app.name>>> | The application name, defaults to <<<$\{project.name\}>>>
+ <<<globalpom.custom.app.name>>> | The application name, defaults to <<<$\{project.name\}>>>
 *-----*------*
- <<<project.custom.app.description>>> | The application description, defaults to <<<"">>>. Is used in the shortcuts specifications as the description of the application.
+ <<<globalpom.custom.app.description>>> | The application description, defaults to <<<"">>>. Is used in the shortcuts specifications as the description of the application.
 *-----*------*
- <<<project.custom.app.path>>> | The application installation path, defaults to <<<$\{project.name\}>>>.
+ <<<globalpom.custom.app.path>>> | The application installation path, defaults to <<<$\{project.name\}>>>.
 *-----*------*
- <<<project.custom.app.version>>> | The application version string, defaults to <<<$\{project.version\}>>>.
+ <<<globalpom.custom.app.version>>> | The application version string, defaults to <<<$\{project.version\}>>>.
 *-----*------*
- <<<project.custom.app.author.name>>> | The application author name, must be set.
+ <<<globalpom.custom.app.author.name>>> | The application author name, must be set.
 *-----*------*
- <<<project.custom.app.author.email>>> | The application author email address, must be set.
+ <<<globalpom.custom.app.author.email>>> | The application author email address, must be set.
 *-----*------*
- <<<project.custom.app.mainclass>>> | The application main class, must be set.
+ <<<globalpom.custom.app.mainclass>>> | The application main class, must be set.
 *-----*------*
- <<<project.custom.app.jarfilename>>> | The packaged application file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}-single-jar">>>. It is used for packaging the Windows executable file.
+ <<<globalpom.custom.app.jarfilename>>> | The packaged application file name, defaults to <<<"$\{project.artifactId\}-$\{project.version\}-single-jar">>>. It is used for packaging the Windows executable file.
 *-----*------*
- <<<project.custom.app.organization.url>>> | The application organization Internet address, defaults to <<<"http://www.anr-institute.com">>>. Should probably be changed.
+ <<<globalpom.custom.app.organization.url>>> | The application organization Internet address, defaults to <<<"http://www.anr-institute.com">>>. Should probably be changed.
 *-----*------*
- <<<project.custom.app.copyright>>> | The application copyright disclaimer, defaults to <<<"$\{project.custom.year\} $\{project.custom.author.name\}">>>.
+ <<<globalpom.custom.app.copyright>>> | The application copyright disclaimer, defaults to <<<"$\{globalpom.custom.year\} $\{globalpom.custom.author.name\}">>>.
 *-----*------*
- <<<project.custom.app.icon.unix>>> | The application icon for Unix systems, defaults to <<<"etc/application.png">>>.
+ <<<globalpom.custom.app.icon.unix>>> | The application icon for Unix systems, defaults to <<<"etc/application.png">>>.
 *-----*------*
- <<<project.custom.app.icon.windows>>> | The application icon for Windows systems, defaults to <<<"etc/application.ico">>>.
+ <<<globalpom.custom.app.icon.windows>>> | The application icon for Windows systems, defaults to <<<"etc/application.ico">>>.
 *-----*------*
- <<<project.custom.app.linuxbin>>> | The application start script for Unix/Linux Systems, defaults to <<<"run.sh">>>.
+ <<<globalpom.custom.app.linuxbin>>> | The application start script for Unix/Linux Systems, defaults to <<<"run.sh">>>.
 *-----*------*
- <<<project.custom.app.linuxdebugbin>>> | The application debug start script for Unix/Linux Systems, defaults to <<<"debug-run.sh">>>.
+ <<<globalpom.custom.app.linuxdebugbin>>> | The application debug start script for Unix/Linux Systems, defaults to <<<"debug-run.sh">>>.
 *-----*------*
- <<<project.custom.app.windowsbin>>> | The application start script for Windows Systems, defaults to <<<"$\{project.custom.app.windowslauncher\}">>>. To use the application executable instead of the Windows launcher set to <<<"$\{project.custom.app.windowsapplauncher\}">>>. To use the start script instead of the Windows launcher set to <<<"$\{project.custom.app.windowsstartscript\}">>>.
+ <<<globalpom.custom.app.windowsbin>>> | The application start script for Windows Systems, defaults to <<<"$\{globalpom.custom.app.windowslauncher\}">>>. To use the application executable instead of the Windows launcher set to <<<"$\{globalpom.custom.app.windowsapplauncher\}">>>. To use the start script instead of the Windows launcher set to <<<"$\{globalpom.custom.app.windowsstartscript\}">>>.
 *-----*------*
- <<<project.custom.app.windowsdebugbin>>> | The application debug start script for Windows Systems, defaults to <<<"$\{project.custom.app.windowsdebugscript\}">>>.
+ <<<globalpom.custom.app.windowsdebugbin>>> | The application debug start script for Windows Systems, defaults to <<<"$\{globalpom.custom.app.windowsdebugscript\}">>>.
 *-----*------*
- <<<project.custom.app.windowsstartscript>>> | The application start script for Windows Systems, defaults to <<<"run.bat">>>.
+ <<<globalpom.custom.app.windowsstartscript>>> | The application start script for Windows Systems, defaults to <<<"run.bat">>>.
 *-----*------*
- <<<project.custom.app.windowsdebugscript>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
+ <<<globalpom.custom.app.windowsdebugscript>>> | The application debug start script for Windows Systems, defaults to <<<"debug-run.bat">>>.
 *-----*------*
- <<<project.custom.app.windowslauncher>>> | The application start launcher for Windows Systems, defaults to <<<"$\{project.custom.launch4j.app.launcherfilename\}.exe">>>. Can be used in the short-cut specification to start the application, instead of the start script.
+ <<<globalpom.custom.app.windowslauncher>>> | The application start launcher for Windows Systems, defaults to <<<"$\{globalpom.custom.launch4j.app.launcherfilename\}.exe">>>. Can be used in the short-cut specification to start the application, instead of the start script.
 *-----*------*
- <<<project.custom.app.windowsapplauncher>>> | The application executable for Windows Systems, defaults to <<<"$\{project.custom.launch4j.app.filename\}.exe">>>.
+ <<<globalpom.custom.app.windowsapplauncher>>> | The application executable for Windows Systems, defaults to <<<"$\{globalpom.custom.launch4j.app.filename\}.exe">>>.
 *-----*------*
 
 ** IzPack Properties
 
 *-----*------*
- <<<project.custom.izpack.version>>> | The IzPack version, defaults to <<<"5.0.0-rc4">>>.
+ <<<globalpom.custom.izpack.version>>> | The IzPack version, defaults to <<<"5.0.0-rc4">>>.
 *-----*------*
- <<<project.custom.izpack.staging.dir>>> | The IzPack staging directory path. That is the path to where all dependencies and resources are staged for packaging, defaults to <<<"$\{project.build.directory\}/staging">>>.
+ <<<globalpom.custom.izpack.staging.dir>>> | The IzPack staging directory path. That is the path to where all dependencies and resources are staged for packaging, defaults to <<<"$\{project.build.directory\}/staging">>>.
 *-----*------*
- <<<project.custom.izpack.resources.dir>>> | The IzPack resources directory path. That is the path where the <<<install.xml>>> and other IzPack resources are found, defaults to <<<"src/main/izpack">>>.
+ <<<globalpom.custom.izpack.resources.dir>>> | The IzPack resources directory path. That is the path where the <<<install.xml>>> and other IzPack resources are found, defaults to <<<"src/main/izpack">>>.
 *-----*------*
- <<<project.custom.izpack.gui.resizeable>>> | Sets the IzPack installation GUI resizeable, defaults to <<<"true">>>.
+ <<<globalpom.custom.izpack.gui.resizeable>>> | Sets the IzPack installation GUI resizeable, defaults to <<<"true">>>.
 *-----*------*
- <<<project.custom.izpack.gui.width>>> | Sets the IzPack installation GUI initial width in pixels, defaults to <<<"536">>>.
+ <<<globalpom.custom.izpack.gui.width>>> | Sets the IzPack installation GUI initial width in pixels, defaults to <<<"536">>>.
 *-----*------*
- <<<project.custom.izpack.gui.height>>> | Sets the IzPack installation GUI initial height in pixels, defaults to <<<"428">>>.
+ <<<globalpom.custom.izpack.gui.height>>> | Sets the IzPack installation GUI initial height in pixels, defaults to <<<"428">>>.
 *-----*------*
- <<<project.custom.izpack.readme>>> | Sets the path for the readme file for the IzPack packager that is shown in the info-panel, defaults to <<<"doc/en/readme.txt">>>.
+ <<<globalpom.custom.izpack.readme>>> | Sets the path for the readme file for the IzPack packager that is shown in the info-panel, defaults to <<<"doc/en/readme.txt">>>.
 *-----*------*
- <<<project.custom.jre.minversion>>> | Sets the minimal JRE version string, defaults to <<<"$\{project.custom.source.source\}.0">>>.
+ <<<globalpom.custom.jre.minversion>>> | Sets the minimal JRE version string, defaults to <<<"$\{globalpom.custom.source.source\}.0">>>.
 *-----*------*
 
 ** Launch4j Installer Properties
 
 *-----*------*
- <<<project.custom.launch4j.izpack.mainclass>>> | The IzPack main class fully qualified name, defaults to <<<"com.izforge.izpack.installer.bootstrap.Installer">>>.
+ <<<globalpom.custom.launch4j.izpack.mainclass>>> | The IzPack main class fully qualified name, defaults to <<<"com.izforge.izpack.installer.bootstrap.Installer">>>.
 *-----*------*
- <<<project.custom.launch4j.izpack.preclasspath>>> | Optional parameters for the IzPack class path, defaults to <<<"">>>, empty.
+ <<<globalpom.custom.launch4j.izpack.preclasspath>>> | Optional parameters for the IzPack class path, defaults to <<<"">>>, empty.
 *-----*------*
- <<<project.custom.launch4j.install.jarfilename>>> | The packaged IzPack installation Jar file name created by the <<<"compile-izpack">>> profile, defaults to <<<"$\{project.artifactId\}-$\{project.version\}">>>.
+ <<<globalpom.custom.launch4j.install.jarfilename>>> | The packaged IzPack installation Jar file name created by the <<<"compile-izpack">>> profile, defaults to <<<"$\{project.artifactId\}-$\{project.version\}">>>.
 *-----*------*
- <<<project.custom.launch4j.install.icon>>> | The application installer icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.icon>>> | The application installer icon path, defaults to <<<"src/main/izpack/$\{globalpom.custom.app.icon.windows\}">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.fileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.fileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.txtfileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.txtfileversion>>> | The application installer file version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.filedescription>>> | The application installer file description string, defaults to <<<"$\{project.custom.app.description\}">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.filedescription>>> | The application installer file description string, defaults to <<<"$\{globalpom.custom.app.description\}">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.copyright>>> | The application installer copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.copyright>>> | The application installer copyright string, defaults to <<<"$\{globalpom.custom.app.copyright\}">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.productversion>>> | The product installer version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.productversion>>> | The product installer version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.txtproductversion>>> | The product installer version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.txtproductversion>>> | The product installer version string, defaults to <<<"1.0.0.0">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.productname>>> | The product installer name string, defaults to <<<"$\{project.custom.app.name\}">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.productname>>> | The product installer name string, defaults to <<<"$\{globalpom.custom.app.name\}">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.originalfilename>>> | The original installer file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.originalfilename>>> | The original installer file name string, defaults to <<<"$\{globalpom.custom.app.jarfilename\}.exe">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
- <<<project.custom.launch4j.install.internalname>>> | The internal installer file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>. It is used for packaging the Windows installer executable file.
+ <<<globalpom.custom.launch4j.install.internalname>>> | The internal installer file name string, defaults to <<<"$\{globalpom.custom.app.jarfilename\}.jar">>>. It is used for packaging the Windows installer executable file.
 *-----*------*
 
 ** Launch4j Application Properties
 
 *-----*------*
- <<<project.custom.launch4j.app.type>>> | The application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
+ <<<globalpom.custom.launch4j.app.type>>> | The application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
 *-----*------*
- <<<project.custom.launch4j.app.icon>>> | The application icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
+ <<<globalpom.custom.launch4j.app.icon>>> | The application icon path, defaults to <<<"src/main/izpack/$\{globalpom.custom.app.icon.windows\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.filename>>> | The application Exe file name, defaults to <<<"$\{project.custom.app.jarfilename\}">>>.
+ <<<globalpom.custom.launch4j.app.filename>>> | The application Exe file name, defaults to <<<"$\{globalpom.custom.app.jarfilename\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.jarfilename>>> | The application main Jar file, must be set. That is the Jar file containing the main class. Defaults to <<<"$\{project.custom.app.jarfilename\}">>>.
+ <<<globalpom.custom.launch4j.app.jarfilename>>> | The application main Jar file, must be set. That is the Jar file containing the main class. Defaults to <<<"$\{globalpom.custom.app.jarfilename\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.commandline>>> | The application command line arguments, defaults to <<<"">>>, empty.
+ <<<globalpom.custom.launch4j.app.commandline>>> | The application command line arguments, defaults to <<<"">>>, empty.
 *-----*------*
- <<<project.custom.launch4j.app.jreopt>>> | The JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
+ <<<globalpom.custom.launch4j.app.jreopt>>> | The JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
 *-----*------*
- <<<project.custom.launch4j.app.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
+ <<<globalpom.custom.launch4j.app.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
 *-----*------*
- <<<project.custom.launch4j.app.stayalive>>> | If the should stay alive in the background until the application terminates, defaults to <<<"false">>>.
+ <<<globalpom.custom.launch4j.app.stayalive>>> | If the should stay alive in the background until the application terminates, defaults to <<<"false">>>.
 *-----*------*
- <<<project.custom.launch4j.app.fileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.app.fileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.txtfileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.app.txtfileversion>>> | The application file version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.filedescription>>> | The application file description string, defaults to <<<"$\{project.custom.app.description\}">>>.
+ <<<globalpom.custom.launch4j.app.filedescription>>> | The application file description string, defaults to <<<"$\{globalpom.custom.app.description\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.copyright>>> | The application copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>.
+ <<<globalpom.custom.launch4j.app.copyright>>> | The application copyright string, defaults to <<<"$\{globalpom.custom.app.copyright\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.productversion>>> | The product version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.app.productversion>>> | The product version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.txtproductversion>>> | The product version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.app.txtproductversion>>> | The product version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.app.productname>>> | The product name string, defaults to <<<"$\{project.custom.app.name\}">>>.
+ <<<globalpom.custom.launch4j.app.productname>>> | The product name string, defaults to <<<"$\{globalpom.custom.app.name\}">>>.
 *-----*------*
- <<<project.custom.launch4j.app.originalfilename>>> | The original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>.
+ <<<globalpom.custom.launch4j.app.originalfilename>>> | The original file name string, defaults to <<<"$\{globalpom.custom.app.jarfilename\}.exe">>>.
 *-----*------*
- <<<project.custom.launch4j.app.internalname>>> | The internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
+ <<<globalpom.custom.launch4j.app.internalname>>> | The internal file name string, defaults to <<<"$\{globalpom.custom.app.jarfilename\}.jar">>>.
 *-----*------*
 
 ** Launch4j Application Launcher Properties
 
 *-----*------*
- <<<project.custom.launch4j.applauncher.type>>> | The launcher application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
+ <<<globalpom.custom.launch4j.applauncher.type>>> | The launcher application type, defaults to <<<"gui">>>. Can be set to <<<"gui">>> or <<<"console>>>. See {{http://launch4j.sourceforge.net/docs.html}}.
 *-----*------*
- <<<project.custom.launch4j.applauncher.icon>>> | The launcher application icon path, defaults to <<<"src/main/izpack/$\{project.custom.app.icon.windows\}">>>.
+ <<<globalpom.custom.launch4j.applauncher.icon>>> | The launcher application icon path, defaults to <<<"src/main/izpack/$\{globalpom.custom.app.icon.windows\}">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.launcherfilename>>> | The launcher application Exe file name, defaults to <<<"$\{project.artifactId\}">>>.
+ <<<globalpom.custom.launch4j.applauncher.launcherfilename>>> | The launcher application Exe file name, defaults to <<<"$\{project.artifactId\}">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.jarfilename>>> | The launcher application main Jar file, must be set. That is the Jar file containing the main class. Defaults to <<<"$\{project.custom.app.jarfilename\}">>>.
+ <<<globalpom.custom.launch4j.applauncher.jarfilename>>> | The launcher application main Jar file, must be set. That is the Jar file containing the main class. Defaults to <<<"$\{globalpom.custom.app.jarfilename\}">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.commandline>>> | The launcher application command line arguments, defaults to <<<"">>>, empty.
+ <<<globalpom.custom.launch4j.applauncher.commandline>>> | The launcher application command line arguments, defaults to <<<"">>>, empty.
 *-----*------*
- <<<project.custom.launch4j.applauncher.jreopt>>> | The launcher JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
+ <<<globalpom.custom.launch4j.applauncher.jreopt>>> | The launcher JRE command line arguments, defaults to <<<"-Dlogback.configurationFile=etc/logback.xml">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
+ <<<globalpom.custom.launch4j.applauncher.chdir>>> | To where the current working directory should be changed, defaults to <<<"../..">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.stayalive>>> | If the launcher should stay alive in the background until the application terminates, defaults to <<<"false">>>.
+ <<<globalpom.custom.launch4j.applauncher.stayalive>>> | If the launcher should stay alive in the background until the application terminates, defaults to <<<"false">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.fileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.applauncher.fileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.txtfileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.applauncher.txtfileversion>>> | The launcher application file version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.filedescription>>> | The launcher application file description string, defaults to <<<"$\{project.custom.app.description\}">>>.
+ <<<globalpom.custom.launch4j.applauncher.filedescription>>> | The launcher application file description string, defaults to <<<"$\{globalpom.custom.app.description\}">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.copyright>>> | The launcher application copyright string, defaults to <<<"$\{project.custom.app.copyright\}">>>.
+ <<<globalpom.custom.launch4j.applauncher.copyright>>> | The launcher application copyright string, defaults to <<<"$\{globalpom.custom.app.copyright\}">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.productversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.applauncher.productversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.txtproductversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
+ <<<globalpom.custom.launch4j.applauncher.txtproductversion>>> | The launcher product version string, defaults to <<<"1.0.0.0">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.productname>>> | The launcher product name string, defaults to <<<"$\{project.custom.app.name\}">>>.
+ <<<globalpom.custom.launch4j.applauncher.productname>>> | The launcher product name string, defaults to <<<"$\{globalpom.custom.app.name\}">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.originalfilename>>> | The launcher original file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.exe">>>.
+ <<<globalpom.custom.launch4j.applauncher.originalfilename>>> | The launcher original file name string, defaults to <<<"$\{globalpom.custom.app.jarfilename\}.exe">>>.
 *-----*------*
- <<<project.custom.launch4j.applauncher.internalname>>> | The launcher internal file name string, defaults to <<<"$\{project.custom.app.jarfilename\}.jar">>>.
+ <<<globalpom.custom.launch4j.applauncher.internalname>>> | The launcher internal file name string, defaults to <<<"$\{globalpom.custom.app.jarfilename\}.jar">>>.
 *-----*------*
 
 ** Launch4j Uninstaller Properties
 
 *-----*------*
- <<<project.custom.launch4j.unistaller.filename>>> | The uninstaller file name, defaults to <<<"uninstaller">>>.
+ <<<globalpom.custom.launch4j.unistaller.filename>>> | The uninstaller file name, defaults to <<<"uninstaller">>>.
 *-----*------*
- <<<project.custom.launch4j.unistaller.mainclass>>> | The uninstaller main fully qualified class, defaults to <<<"com.izforge.izpack.uninstaller.Uninstaller">>>.
+ <<<globalpom.custom.launch4j.unistaller.mainclass>>> | The uninstaller main fully qualified class, defaults to <<<"com.izforge.izpack.uninstaller.Uninstaller">>>.
 *-----*------*
- <<<project.custom.launch4j.unistaller.jarfile>>> | The uninstaller Jar file, defaults to <<<"Uninstaller/uninstaller.jar">>>.
+ <<<globalpom.custom.launch4j.unistaller.jarfile>>> | The uninstaller Jar file, defaults to <<<"Uninstaller/uninstaller.jar">>>.
 *-----*------*
- <<<project.custom.launch4j.unistaller.chdir>>> | To where the current working directory should be changed, defaults to <<<"..">>>.
+ <<<globalpom.custom.launch4j.unistaller.chdir>>> | To where the current working directory should be changed, defaults to <<<"..">>>.
 *-----*------*
 
 * Goals
@@ -303,7 +303,7 @@ executables file, the following sequence should be run, and the following
 property must be changed:
 
 ---
-<project.custom.app.windowsbin>$\{project.custom.app.windowsstartscript\}</project.custom.app.windowsbin>
+<globalpom.custom.app.windowsbin>$\{globalpom.custom.app.windowsstartscript\}</globalpom.custom.app.windowsbin>
 ---
 
 ---

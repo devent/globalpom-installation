@@ -1,5 +1,5 @@
 @REM
-@REM Copyright 2011-2021 Erwin Müller <erwin.mueller@anrisoftware.com>
+@REM Copyright 2011-2022 Erwin Müller <erwin.mueller@anrisoftware.com>
 @REM
 @REM Licensed under the Apache License, Version 2.0 (the "License");
 @REM you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ set apppath=%bashpath%/../..
 set lib="%apppath%"\lib\*
 set log="-Dlogback.configurationFile=file:///%apppath%/etc/logback.xml"
 set args=
-set mainClass="${project.custom.app.mainclass}"
+set mainClass="${globalpom.custom.app.mainclass}"
 
 javaw -version >nul 2>&1 && ( set found=true ) || ( set found=false )
 if %found% EQU false (

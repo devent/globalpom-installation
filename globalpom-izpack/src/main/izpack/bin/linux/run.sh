@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright 2011-2021 Erwin Müller <erwin.mueller@anrisoftware.com>
+# Copyright 2011-2022 Erwin Müller <erwin.mueller@anrisoftware.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -52,11 +52,11 @@ function checkJavaRuntime() {
 currentDir=$(pwd)
 changeBinDirectory
 javaCommand=`type -P java`
-mainClass="${project.custom.app.mainclass}"
+mainClass="${globalpom.custom.app.mainclass}"
 lib="../../lib/*"
 IFS='.' read -a lang <<< "$LANG"
 log="-Dlogback.configurationFile=file:///$PWD/../../etc/logback.xml"
-logArgs="-Dproject.custom.log.prefix=$currentDir"
+logArgs="-Dglobalpom.custom.log.prefix=$currentDir"
 args=""
 noJavaRuntimeText="No Java Runtime found."
 checkJavaRuntime

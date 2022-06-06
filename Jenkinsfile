@@ -1,5 +1,5 @@
 /**
- * Copyright © 2011 Erwin Müller (erwin.mueller@anrisoftware.com)
+ * Copyright 2011-2022 Erwin Müller <erwin.mueller@anrisoftware.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,9 @@
  * Builds and deploys the project.
  *
  * @author Erwin Mueller, erwin.mueller@deventm.org
- * @since 4.6.1
- * @version 1.4.0
+ * @since 4.6.2
+ * @version 1.4.1
  */
-
 def groupId
 def artifactId
 def version
@@ -58,9 +57,9 @@ pipeline {
             steps {
                 container("maven") {
                     script {
-                        groupId = sh script: 'mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout', returnStdout: true
-                        artifactId = sh script: 'mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout', returnStdout: true
-                        version = sh script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true
+                        groupId = sh script: 'mvn -s /m2/settings.xml help:evaluate -Dexpression=project.groupId -q -DforceStdout', returnStdout: true
+                        artifactId = sh script: 'mvn -s /m2/settings.xml help:evaluate -Dexpression=project.artifactId -q -DforceStdout', returnStdout: true
+                        version = sh script: 'mvn -s /m2/settings.xml help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true
                         isSnapshot = (version =~ /(?i).*-snapshot$/).matches()
                         echo "${groupId}/${artifactId}:${version} snapshot: ${isSnapshot}"
                     }
@@ -130,5 +129,5 @@ pipeline {
             }
         }
     } // post
-        
+
 }
